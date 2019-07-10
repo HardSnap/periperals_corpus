@@ -1,0 +1,1185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>user.org</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>led_blinker</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>S00_AXI</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm_rtl" spirit:version="1.0"/>
+      <spirit:slave>
+        <spirit:memoryMapRef spirit:memoryMapRef="S00_AXI"/>
+      </spirit:slave>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awaddr</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awprot</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WSTRB</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wstrb</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bresp</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_araddr</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arprot</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rresp</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>WIZ_DATA_WIDTH</spirit:name>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.S00_AXI.WIZ_DATA_WIDTH" spirit:choiceRef="choice_list_6fc15197">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>WIZ_NUM_REG</spirit:name>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.S00_AXI.WIZ_NUM_REG" spirit:minimum="4" spirit:maximum="512" spirit:rangeType="long">4</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>SUPPORTS_NARROW_BURST</spirit:name>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.S00_AXI.SUPPORTS_NARROW_BURST" spirit:choiceRef="choice_pairs_ce1226b1">0</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>S00_AXI_RST</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_aresetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_RST.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>S00_AXI_CLK</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_aclk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_CLK.ASSOCIATED_BUSIF">S00_AXI</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_CLK.ASSOCIATED_RESET">s00_axi_aresetn</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>peripheral_clock</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:connectionRequired>true</spirit:connectionRequired>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>peripheral_clock</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+    <spirit:memoryMap>
+      <spirit:name>S00_AXI</spirit:name>
+      <spirit:addressBlock>
+        <spirit:name>S00_AXI_reg</spirit:name>
+        <spirit:baseAddress spirit:format="long" spirit:resolve="user">0</spirit:baseAddress>
+        <spirit:range spirit:format="long">4096</spirit:range>
+        <spirit:width spirit:format="long">32</spirit:width>
+        <spirit:usage>register</spirit:usage>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>OFFSET_BASE_PARAM</spirit:name>
+            <spirit:value spirit:id="ADDRBLOCKPARAM_VALUE.S00_AXI.S00_AXI_REG.OFFSET_BASE_PARAM">C_S00_AXI_BASEADDR</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>OFFSET_HIGH_PARAM</spirit:name>
+            <spirit:value spirit:id="ADDRBLOCKPARAM_VALUE.S00_AXI.S00_AXI_REG.OFFSET_HIGH_PARAM">C_S00_AXI_HIGHADDR</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:addressBlock>
+    </spirit:memoryMap>
+  </spirit:memoryMaps>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_verilogsynthesis</spirit:name>
+        <spirit:displayName>Verilog Synthesis</spirit:displayName>
+        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>verilog</spirit:language>
+        <spirit:modelName>led_blinker_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogsynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>1d7bdb15</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_verilogbehavioralsimulation</spirit:name>
+        <spirit:displayName>Verilog Simulation</spirit:displayName>
+        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>verilog</spirit:language>
+        <spirit:modelName>led_blinker_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogbehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>1d7bdb15</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_softwaredriver</spirit:name>
+        <spirit:displayName>Software Driver</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:sw.driver</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_softwaredriver_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>7bbd781d</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>fd592ead</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>bd_tcl</spirit:name>
+        <spirit:displayName>Block Diagram</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:block.diagram</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>bd_tcl_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>45a2f450</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_testbench</spirit:name>
+        <spirit:displayName>Test Bench</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation.testbench</spirit:envIdentifier>
+        <spirit:modelName>tb_axi_lite_slave</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_testbench_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>2434f76d</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>LEDs</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">0</spirit:left>
+            <spirit:right spirit:format="long">7</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>scan_input</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>scan_output</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>scan_enable</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>peripheral_clock</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awaddr</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awprot</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wstrb</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) / 8) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bresp</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_araddr</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arprot</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rresp</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_aclk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_aresetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
+        <spirit:displayName>C S00 AXI DATA WIDTH</spirit:displayName>
+        <spirit:description>Width of S_AXI data bus</spirit:description>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH" spirit:order="3" spirit:rangeType="long">32</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
+        <spirit:displayName>C S00 AXI ADDR WIDTH</spirit:displayName>
+        <spirit:description>Width of S_AXI address bus</spirit:description>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">4</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_6fc15197</spirit:name>
+      <spirit:enumeration>32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_pairs_ce1226b1</spirit:name>
+      <spirit:enumeration spirit:text="true">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="false">0</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>hdl/led_blinker_v1_0_S00_AXI.v</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/led_blinker_v1_0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_2b10d0fb</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>hdl/led_blinker_v1_0_S00_AXI.v</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/led_blinker_v1_0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_softwaredriver_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>drivers/led_blinker_v1_0/data/led_blinker.mdd</spirit:name>
+        <spirit:userFileType>mdd</spirit:userFileType>
+        <spirit:userFileType>driver_mdd</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/led_blinker_v1_0/data/led_blinker.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>driver_tcl</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/led_blinker_v1_0/src/Makefile</spirit:name>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/led_blinker_v1_0/src/led_blinker.h</spirit:name>
+        <spirit:fileType>cSource</spirit:fileType>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/led_blinker_v1_0/src/led_blinker.c</spirit:name>
+        <spirit:fileType>cSource</spirit:fileType>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/led_blinker_v1_0/src/led_blinker_selftest.c</spirit:name>
+        <spirit:fileType>cSource</spirit:fileType>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/led_blinker_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_fd592ead</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>bd_tcl_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>bd/bd.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_testbench_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/tb_axi_lite_slave.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_testbench</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>My new AXI IP</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
+      <spirit:displayName>C S00 AXI DATA WIDTH</spirit:displayName>
+      <spirit:description>Width of S_AXI data bus</spirit:description>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_DATA_WIDTH" spirit:choiceRef="choice_list_6fc15197" spirit:order="3">32</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_DATA_WIDTH">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
+      <spirit:displayName>C S00 AXI ADDR WIDTH</spirit:displayName>
+      <spirit:description>Width of S_AXI address bus</spirit:description>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">4</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_ADDR_WIDTH">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_BASEADDR</spirit:name>
+      <spirit:displayName>C S00 AXI BASEADDR</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_BASEADDR" spirit:order="5" spirit:bitStringLength="32">0xFFFFFFFF</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_BASEADDR">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_HIGHADDR</spirit:name>
+      <spirit:displayName>C S00 AXI HIGHADDR</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_HIGHADDR" spirit:order="6" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_HIGHADDR">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">led_blinker_v1_0</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">zynq</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>led_blinker_v1.0</xilinx:displayName>
+      <xilinx:coreRevision>10</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2019-06-17T09:08:41Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72528bbb_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39611bc8_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d9621d7_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@665d1d67_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65016259_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21e9e84_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6730930b_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d8d7d73_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66754f95_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78183848_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@155cc877_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1673d8f3_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c6b0967_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e7feb8e_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@787ff7b7_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6aaf567_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@628e3262_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c1e8212_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@352868d2_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77462a04_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a79f7d9_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b7386bb_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e8ec9be_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@199dba92_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@431e7796_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9e70598_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79ab34f8_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1394791f_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7abad964_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9b6a3f7_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3cc0c158_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19b8924_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4aa6dea9_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28794ec8_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1915e61f_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55fe2187_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1eac8d67_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7dfa50d_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f3aafb0_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7576db65_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c3d1ec7_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@535f8396_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cc5ef80_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79cd27a1_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ae3d776_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17cfb7c6_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@505c58a8_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31b5b65d_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f51a55d_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8901d69_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74627822_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a421269_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37c782c3_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@345b8e65_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@170f3358_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f462dcd_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b3336ec_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68deda9_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bc8b3c5_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52ee7e6b_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fe6cfe2_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61b7bf20_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62b7e2ea_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c0f9b6_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30abdea3_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21cb78ce_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@740a074b_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64a23b9a_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@437c34d6_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4645b78e_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46c076_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7594887f_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d5a4c8b_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b6bb621_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58b3f9ab_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3339c998_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@601782b7_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65d5fe65_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@274bf9a8_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40373f82_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25c6bbbf_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e9460c9_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f4d479f_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3054989b_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cc5d9c8_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64858fca_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@314f0413_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5243a4b_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@178ca9b9_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c495643_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10984624_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77ac154d_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27ac29c8_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f8a3028_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5067fffa_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13fc7c88_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@759bf2a8_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27e4164d_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5246a79d_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46a31953_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19348e95_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76b5bace_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a8a24d0_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3869c30e_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@574ea620_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3334a577_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7494d925_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56adf4e1_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66f236a5_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33c1851a_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12e76e47_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b1edd5b_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33bc1ea0_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1821d607_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10fb574d_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@270e644e_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e6837d7_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c59a1bc_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56af0025_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b40b790_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@218d8028_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16f5a120_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@486b1b12_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d5938bc_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a2ff8ba_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b6237d4_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2333087b_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d8678bf_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6009c9b6_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13a1336f_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d5ad41a_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68d644ca_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@134fcb1a_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4215a921_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49f3541a_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15b2c8a7_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2eeabb64_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5717526b_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34a859c8_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75c15e0d_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3dd1bfb2_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4144091a_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3dc1c563_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@516f4b98_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@482c1825_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33e6a287_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16952a38_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@185733fc_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45610d71_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@296eb227_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fa8994b_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@547fe0a9_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3074dc15_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53e04466_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46bbd2f6_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f6d0684_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7be278fb_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@589205a2_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@613b997d_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@288e230_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72764acb_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@303c2eaa_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13f43601_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@296c9b60_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ecfd94f_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bf5e66a_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36cdca8f_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36848812_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bfe631c_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@fe87a5_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62f1ecb4_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f4daac9_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69d817fc_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f5266d2_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@386051bd_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d087774_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e4930fa_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42290a69_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@754439b4_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ae9d22d_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@436bb7e4_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@fd490fa_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a0142a5_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@125e4f20_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@702ab858_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12500dcc_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@447f6c91_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73e06559_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@209547c9_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c53d654_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2019ebe5_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b23fea3_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@377d2cd4_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b02ce7f_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48f3da80_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d70f6f3_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c4b2ebc_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c72bf9b_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@309665b8_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f55008b_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@225075d5_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f300a9e_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@776a2cba_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5cf45bb4_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b55091d_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a707117_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1cab40f0_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e8e2d26_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@501d710f_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@623d5c6c_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@685b9ee6_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d340fae_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@792445f5_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15aac993_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a5a3b5d_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20fc98ec_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f8d0390_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e9f86ef_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2af8d85a_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2eea862b_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f5d6f0b_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17c67ea5_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@752ac627_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23c8ea3a_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4abef00e_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@eeff522_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bb2cb63_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7db21165_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f9c8113_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4eff3919_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1483a4ea_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41d423e0_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1945192f_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c08f3a9_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@249fa260_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bacb858_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12112819_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4febbcc8_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54edc79a_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17129ac2_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66597086_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@276ef401_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4080c100_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@93c82af_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66f9ae0d_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6630f6a0_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40042aaa_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/led_blinker_1.0</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="18692070"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="b851578e"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="6055a786"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="6992ea72"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="53159fb9"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>
