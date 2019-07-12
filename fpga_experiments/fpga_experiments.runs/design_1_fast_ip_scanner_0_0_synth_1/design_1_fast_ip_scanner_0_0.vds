@@ -1,0 +1,472 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Jul 12 10:09:26 2019
+# Process ID: 26521
+# Current directory: /home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.runs/design_1_fast_ip_scanner_0_0_synth_1
+# Command line: vivado -log design_1_fast_ip_scanner_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_fast_ip_scanner_0_0.tcl
+# Log file: /home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.runs/design_1_fast_ip_scanner_0_0_synth_1/design_1_fast_ip_scanner_0_0.vds
+# Journal file: /home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.runs/design_1_fast_ip_scanner_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_fast_ip_scanner_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nasm/Projects/fpga_ip/AES_CTR_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nasm/Projects/fpga_scan_ip/ip_repo/fast_ip_scanner_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nasm/Projects/fpga_ip/aes_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nasm/Projects/fpga_ip/sha256_scannable_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nasm/Projects/fpga_ip/sha256_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/nasm/Tools/Xilinx/Vivado/2019.1/data/ip'.
+Command: synth_design -top design_1_fast_ip_scanner_0_0 -part xc7z020clg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 26592 
+WARNING: [Synth 8-6901] identifier 'scan_done' is used before its declaration [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:61]
+WARNING: [Synth 8-6901] identifier 'snapshot_chunk_ptr' is used before its declaration [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:134]
+WARNING: [Synth 8-6901] identifier 'snapshot_chunk' is used before its declaration [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:162]
+WARNING: [Synth 8-6901] identifier 'internal_scan_start' is used before its declaration [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:175]
+WARNING: [Synth 8-6901] identifier 'IDLE' is used before its declaration [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:186]
+WARNING: [Synth 8-6901] identifier 'snapshot_chunk' is used before its declaration [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:190]
+WARNING: [Synth 8-6901] identifier 'snapshot_chunk' is used before its declaration [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:208]
+WARNING: [Synth 8-6901] identifier 'fsm_state' is used before its declaration [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:222]
+WARNING: [Synth 8-6901] identifier 'IDLE' is used before its declaration [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:222]
+WARNING: [Synth 8-6901] identifier 'dumped_chunk_ptr' is used before its declaration [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:225]
+WARNING: [Synth 8-6901] identifier 'dumped_chunk' is used before its declaration [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:231]
+WARNING: [Synth 8-6901] identifier 'snapshot_chunk' is used before its declaration [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:232]
+WARNING: [Synth 8-2507] parameter declaration becomes local in fast_ip_scanner_v1_0_M00_AXI with formal parameter declaration list [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/fast_ip_scanner_v1_0_M00_AXI.v:111]
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1593.559 ; gain = 147.574 ; free physical = 4824 ; free virtual = 9698
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_fast_ip_scanner_0_0' [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ip/design_1_fast_ip_scanner_0_0/synth/design_1_fast_ip_scanner_0_0.v:56]
+INFO: [Synth 8-6157] synthesizing module 'fast_ip_scanner_v1_0' [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/fast_ip_scanner_v1_0.v:4]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter C_M00_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fast_ip_scanner_v1_0_S00_AXI' [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/fast_ip_scanner_v1_0_S00_AXI.v:4]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 2 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element slv_reg4_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/fast_ip_scanner_v1_0_S00_AXI.v:234]
+INFO: [Synth 8-6155] done synthesizing module 'fast_ip_scanner_v1_0_S00_AXI' (1#1) [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/fast_ip_scanner_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6157] synthesizing module 'fast_ip_scanner_v1_0_M00_AXI' [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/fast_ip_scanner_v1_0_M00_AXI.v:3]
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter IDLE bound to: 2'b00 
+	Parameter INIT_WRITE bound to: 2'b01 
+	Parameter INIT_READ bound to: 2'b10 
+INFO: [Synth 8-6155] done synthesizing module 'fast_ip_scanner_v1_0_M00_AXI' (2#1) [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/fast_ip_scanner_v1_0_M00_AXI.v:3]
+INFO: [Synth 8-6157] synthesizing module 'scan_core_fifo' [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter RW_IDLE bound to: 4'b0000 
+	Parameter RW_READY bound to: 4'b0001 
+	Parameter RW_WAIT_COMPLETION bound to: 4'b0010 
+	Parameter RW_WRITE bound to: 4'b0011 
+	Parameter RW_READ bound to: 4'b0100 
+	Parameter DUTY_CYCLE1 bound to: 4'b0101 
+	Parameter DUTY_CYCLE2 bound to: 4'b0110 
+	Parameter DUTY_CYCLE3 bound to: 4'b0111 
+	Parameter IDLE bound to: 4'b0000 
+	Parameter INIT_DATA bound to: 4'b0001 
+	Parameter WAIT_DATA bound to: 4'b0010 
+	Parameter SCAN bound to: 4'b0011 
+	Parameter DONE bound to: 4'b0100 
+	Parameter DONE_2 bound to: 4'b0101 
+WARNING: [Synth 8-6104] Input port 'cs_ready' has an internal driver [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:69]
+WARNING: [Synth 8-6104] Input port 'cs_address' has an internal driver [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:70]
+WARNING: [Synth 8-6104] Input port 'cs_is_read' has an internal driver [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:72]
+INFO: [Synth 8-6157] synthesizing module 'fifo' [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/fifo.sv:30]
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter DEPTH bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo' (3#1) [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/fifo.sv:30]
+INFO: [Synth 8-251] Scan Output 1'bx [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:391]
+WARNING: [Synth 8-6014] Unused sequential element fifo_error_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:130]
+WARNING: [Synth 8-6014] Unused sequential element fifo_error_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:158]
+WARNING: [Synth 8-3848] Net cs_done in module/entity scan_core_fifo does not have driver. [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:32]
+INFO: [Synth 8-6155] done synthesizing module 'scan_core_fifo' (4#1) [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/scan_core_fifo.sv:23]
+WARNING: [Synth 8-3848] Net cs_ready in module/entity fast_ip_scanner_v1_0 does not have driver. [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/fast_ip_scanner_v1_0.v:78]
+WARNING: [Synth 8-3848] Net cs_address in module/entity fast_ip_scanner_v1_0 does not have driver. [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/fast_ip_scanner_v1_0.v:79]
+WARNING: [Synth 8-3848] Net cs_is_read in module/entity fast_ip_scanner_v1_0 does not have driver. [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/fast_ip_scanner_v1_0.v:80]
+INFO: [Synth 8-6155] done synthesizing module 'fast_ip_scanner_v1_0' (5#1) [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/15f0/hdl/fast_ip_scanner_v1_0.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_fast_ip_scanner_0_0' (6#1) [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ip/design_1_fast_ip_scanner_0_0/synth/design_1_fast_ip_scanner_0_0.v:56]
+WARNING: [Synth 8-3331] design scan_core_fifo has unconnected port cs_busy
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_M00_AXI has unconnected port M_AXI_BRESP[1]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_M00_AXI has unconnected port M_AXI_BRESP[0]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_M00_AXI has unconnected port M_AXI_RRESP[1]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_M00_AXI has unconnected port M_AXI_RRESP[0]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1628.465 ; gain = 182.480 ; free physical = 5111 ; free virtual = 9978
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1650.277 ; gain = 204.293 ; free physical = 5063 ; free virtual = 9930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1658.281 ; gain = 212.297 ; free physical = 5049 ; free virtual = 9916
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-802] inferred FSM for state register 'mst_exec_state_reg' in module 'fast_ip_scanner_v1_0_M00_AXI'
+INFO: [Synth 8-802] inferred FSM for state register 'fsm_state_reg' in module 'scan_core_fifo'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                               00
+               INIT_READ |                               01 |                               10
+              INIT_WRITE |                               10 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'mst_exec_state_reg' using encoding 'sequential' in module 'fast_ip_scanner_v1_0_M00_AXI'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              000 |                             0000
+               WAIT_DATA |                              001 |                             0010
+                    SCAN |                              010 |                             0011
+                    DONE |                              011 |                             0100
+                  DONE_2 |                              100 |                             0101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'fsm_state_reg' using encoding 'sequential' in module 'scan_core_fifo'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1685.203 ; gain = 239.219 ; free physical = 4930 ; free virtual = 9798
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 7     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 19    
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 30    
++---RAMs : 
+	              128 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 19    
+	   7 Input     32 Bit        Muxes := 11    
+	   5 Input     32 Bit        Muxes := 5     
+	   2 Input      6 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   7 Input      4 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 41    
+	   3 Input      1 Bit        Muxes := 8     
+	   7 Input      1 Bit        Muxes := 16    
+	   5 Input      1 Bit        Muxes := 11    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module fast_ip_scanner_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 6     
+	                5 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	   7 Input     32 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 5     
+Module fast_ip_scanner_v1_0_M00_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 13    
++---Muxes : 
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 7     
+	   3 Input      1 Bit        Muxes := 8     
+Module fifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
++---RAMs : 
+	              128 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module scan_core_fifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 7     
++---Registers : 
+	               32 Bit    Registers := 11    
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 14    
+	   7 Input     32 Bit        Muxes := 6     
+	   5 Input     32 Bit        Muxes := 5     
+	   2 Input      6 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   7 Input      4 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 27    
+	   7 Input      1 Bit        Muxes := 16    
+	   5 Input      1 Bit        Muxes := 11    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design scan_core_fifo has unconnected port cs_busy
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_M00_AXI has unconnected port M_AXI_BRESP[1]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_M00_AXI has unconnected port M_AXI_BRESP[0]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_M00_AXI has unconnected port M_AXI_RRESP[1]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_M00_AXI has unconnected port M_AXI_RRESP[0]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design fast_ip_scanner_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/scan_core_fifo_inst/fsm_rw_state_reg[3] )
+INFO: [Synth 8-3886] merging instance 'inst/fast_ip_scanner_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'inst/fast_ip_scanner_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/fast_ip_scanner_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'inst/fast_ip_scanner_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'inst/fast_ip_scanner_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/fast_ip_scanner_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1830.562 ; gain = 384.578 ; free physical = 4680 ; free virtual = 9568
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++-----------------------------+-----------------------------------------------+-----------+----------------------+--------------+
+|Module Name                  | RTL Object                                    | Inference | Size (Depth x Width) | Primitives   | 
++-----------------------------+-----------------------------------------------+-----------+----------------------+--------------+
+|design_1_fast_ip_scanner_0_0 | inst/scan_core_fifo_inst/fifo_inst/memory_reg | Implied   | 4 x 32               | RAM32M x 6   | 
++-----------------------------+-----------------------------------------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1833.531 ; gain = 387.547 ; free physical = 4647 ; free virtual = 9535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++-----------------------------+-----------------------------------------------+-----------+----------------------+--------------+
+|Module Name                  | RTL Object                                    | Inference | Size (Depth x Width) | Primitives   | 
++-----------------------------+-----------------------------------------------+-----------+----------------------+--------------+
+|design_1_fast_ip_scanner_0_0 | inst/scan_core_fifo_inst/fifo_inst/memory_reg | Implied   | 4 x 32               | RAM32M x 6   | 
++-----------------------------+-----------------------------------------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1833.531 ; gain = 387.547 ; free physical = 4608 ; free virtual = 9496
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1833.531 ; gain = 387.547 ; free physical = 4652 ; free virtual = 9552
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1833.531 ; gain = 387.547 ; free physical = 4651 ; free virtual = 9552
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1833.531 ; gain = 387.547 ; free physical = 4651 ; free virtual = 9551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1833.531 ; gain = 387.547 ; free physical = 4651 ; free virtual = 9551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1833.531 ; gain = 387.547 ; free physical = 4650 ; free virtual = 9551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1833.531 ; gain = 387.547 ; free physical = 4650 ; free virtual = 9551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    62|
+|2     |LUT1   |    69|
+|3     |LUT2   |   115|
+|4     |LUT3   |    56|
+|5     |LUT4   |   194|
+|6     |LUT5   |    69|
+|7     |LUT6   |   162|
+|8     |MUXF7  |     1|
+|9     |RAM32M |     6|
+|10    |FDCE   |   126|
+|11    |FDPE   |    11|
+|12    |FDRE   |   508|
+|13    |FDSE   |     5|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------------------------------+-----------------------------+------+
+|      |Instance                              |Module                       |Cells |
++------+--------------------------------------+-----------------------------+------+
+|1     |top                                   |                             |  1384|
+|2     |  inst                                |fast_ip_scanner_v1_0         |  1384|
+|3     |    fast_ip_scanner_v1_0_M00_AXI_inst |fast_ip_scanner_v1_0_M00_AXI |    64|
+|4     |    fast_ip_scanner_v1_0_S00_AXI_inst |fast_ip_scanner_v1_0_S00_AXI |   322|
+|5     |    scan_core_fifo_inst               |scan_core_fifo               |   998|
+|6     |      fifo_inst                       |fifo                         |    92|
++------+--------------------------------------+-----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1833.531 ; gain = 387.547 ; free physical = 4650 ; free virtual = 9551
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 45 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1833.531 ; gain = 387.547 ; free physical = 4651 ; free virtual = 9552
+Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1833.539 ; gain = 387.547 ; free physical = 4651 ; free virtual = 9552
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 69 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1926.230 ; gain = 0.000 ; free physical = 4503 ; free virtual = 9404
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 6 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 6 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+38 Infos, 45 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1926.230 ; gain = 480.359 ; free physical = 4598 ; free virtual = 9499
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1926.230 ; gain = 0.000 ; free physical = 4598 ; free virtual = 9499
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Common 17-1381] The checkpoint '/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.runs/design_1_fast_ip_scanner_0_0_synth_1/design_1_fast_ip_scanner_0_0.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2345.258 ; gain = 419.027 ; free physical = 5611 ; free virtual = 10522
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_fast_ip_scanner_0_0, cache-ID = 45d1145efbdaf8b2
+INFO: [Coretcl 2-1174] Renamed 5 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2348.227 ; gain = 0.000 ; free physical = 5601 ; free virtual = 10513
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.runs/design_1_fast_ip_scanner_0_0_synth_1/design_1_fast_ip_scanner_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_fast_ip_scanner_0_0_utilization_synth.rpt -pb design_1_fast_ip_scanner_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Jul 12 10:09:57 2019...

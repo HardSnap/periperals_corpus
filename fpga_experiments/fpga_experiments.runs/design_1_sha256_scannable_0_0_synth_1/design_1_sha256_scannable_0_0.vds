@@ -1,0 +1,432 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Jul 12 10:47:44 2019
+# Process ID: 1854
+# Current directory: /home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.runs/design_1_sha256_scannable_0_0_synth_1
+# Command line: vivado -log design_1_sha256_scannable_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_sha256_scannable_0_0.tcl
+# Log file: /home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.runs/design_1_sha256_scannable_0_0_synth_1/design_1_sha256_scannable_0_0.vds
+# Journal file: /home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.runs/design_1_sha256_scannable_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_sha256_scannable_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nasm/Projects/fpga_ip/AES_CTR_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nasm/Projects/fpga_scan_ip/ip_repo/fast_ip_scanner_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nasm/Projects/fpga_ip/aes_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nasm/Projects/fpga_ip/sha256_scannable_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nasm/Projects/fpga_ip/sha256_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/nasm/Tools/Xilinx/Vivado/2019.1/data/ip'.
+Command: synth_design -top design_1_sha256_scannable_0_0 -part xc7z020clg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 1901 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1591.176 ; gain = 159.574 ; free physical = 5756 ; free virtual = 10749
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_sha256_scannable_0_0' [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ip/design_1_sha256_scannable_0_0/synth/design_1_sha256_scannable_0_0.v:56]
+INFO: [Synth 8-6157] synthesizing module 'sha256_v1_0' [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/hdl/sha256_v1_0.v:4]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sha256_v1_0_S00_AXI' [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:4]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter CORE_NAME0 bound to: 1936220466 - type: integer 
+	Parameter CORE_NAME1 bound to: 758265142 - type: integer 
+	Parameter CORE_VERSION bound to: 825112624 - type: integer 
+	Parameter CTRL_INIT_BIT bound to: 0 - type: integer 
+	Parameter CTRL_NEXT_BIT bound to: 1 - type: integer 
+	Parameter CTRL_MODE_BIT bound to: 2 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sha256_core' [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_core.v:40]
+	Parameter SHA224_H0_0 bound to: -1056596264 - type: integer 
+	Parameter SHA224_H0_1 bound to: 914150663 - type: integer 
+	Parameter SHA224_H0_2 bound to: 812702999 - type: integer 
+	Parameter SHA224_H0_3 bound to: -150054599 - type: integer 
+	Parameter SHA224_H0_4 bound to: -4191439 - type: integer 
+	Parameter SHA224_H0_5 bound to: 1750603025 - type: integer 
+	Parameter SHA224_H0_6 bound to: 1694076839 - type: integer 
+	Parameter SHA224_H0_7 bound to: -1090891868 - type: integer 
+	Parameter SHA256_H0_0 bound to: 1779033703 - type: integer 
+	Parameter SHA256_H0_1 bound to: -1150833019 - type: integer 
+	Parameter SHA256_H0_2 bound to: 1013904242 - type: integer 
+	Parameter SHA256_H0_3 bound to: -1521486534 - type: integer 
+	Parameter SHA256_H0_4 bound to: 1359893119 - type: integer 
+	Parameter SHA256_H0_5 bound to: -1694144372 - type: integer 
+	Parameter SHA256_H0_6 bound to: 528734635 - type: integer 
+	Parameter SHA256_H0_7 bound to: 1541459225 - type: integer 
+	Parameter SHA256_ROUNDS bound to: 63 - type: integer 
+	Parameter CTRL_IDLE bound to: 0 - type: integer 
+	Parameter CTRL_ROUNDS bound to: 1 - type: integer 
+	Parameter CTRL_DONE bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sha256_k_constants' [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_k_constants.v:39]
+INFO: [Synth 8-6155] done synthesizing module 'sha256_k_constants' (1#1) [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_k_constants.v:39]
+INFO: [Synth 8-6157] synthesizing module 'sha256_w_mem' [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_w_mem.v:40]
+	Parameter CTRL_IDLE bound to: 0 - type: integer 
+	Parameter CTRL_UPDATE bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sha256_w_mem' (2#1) [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_w_mem.v:40]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_core.v:1001]
+INFO: [Synth 8-6155] done synthesizing module 'sha256_core' (3#1) [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_core.v:40]
+WARNING: [Synth 8-6014] Unused sequential element digest_reg_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:303]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg0_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:305]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg1_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:306]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:307]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:308]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg4_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:309]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg5_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:310]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg6_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:311]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg7_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:312]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg8_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:313]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg9_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:314]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg10_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:315]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg11_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:316]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg12_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:317]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg13_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:318]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg14_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:319]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg15_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:320]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg16_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:321]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg17_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:322]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg18_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:323]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg19_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:324]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg20_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:325]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg21_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:326]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg22_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:327]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg23_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:328]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg24_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:329]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg25_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:330]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg26_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:331]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg27_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:332]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg28_reg was removed.  [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:333]
+INFO: [Synth 8-6155] done synthesizing module 'sha256_v1_0_S00_AXI' (4#1) [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/src/sha256_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'sha256_v1_0' (5#1) [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ipshared/4cce/hdl/sha256_v1_0.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_sha256_scannable_0_0' (6#1) [/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.srcs/sources_1/bd/design_1/ip/design_1_sha256_scannable_0_0/synth/design_1_sha256_scannable_0_0.v:56]
+WARNING: [Synth 8-3331] design sha256_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design sha256_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design sha256_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design sha256_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design sha256_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design sha256_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1645.926 ; gain = 214.324 ; free physical = 5768 ; free virtual = 10761
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1660.770 ; gain = 229.168 ; free physical = 5770 ; free virtual = 10764
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1668.773 ; gain = 237.172 ; free physical = 5770 ; free virtual = 10764
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1693.695 ; gain = 262.094 ; free physical = 5675 ; free virtual = 10669
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input     32 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 9     
+	   5 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 2     
++---XORs : 
+	   3 Input     32 Bit         XORs := 5     
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 58    
+	                8 Bit    Registers := 2     
+	                6 Bit    Registers := 2     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 12    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 133   
+	   2 Input     31 Bit        Muxes := 2     
+	   2 Input     30 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 3     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 24    
+	   4 Input      1 Bit        Muxes := 49    
+	   5 Input      1 Bit        Muxes := 1     
+	  39 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module sha256_w_mem 
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input     32 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
++---XORs : 
+	   3 Input     32 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 16    
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 49    
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module sha256_core 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 9     
+	   5 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
++---XORs : 
+	   3 Input     32 Bit         XORs := 3     
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 16    
+	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 59    
+	   2 Input     31 Bit        Muxes := 2     
+	   2 Input     30 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 2     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 16    
+	   4 Input      1 Bit        Muxes := 49    
+	   5 Input      1 Bit        Muxes := 1     
+Module sha256_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 26    
+	                8 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 25    
+	   2 Input      1 Bit        Muxes := 5     
+	  39 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design sha256_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design sha256_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design sha256_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design sha256_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design sha256_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design sha256_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+INFO: [Synth 8-3886] merging instance 'inst/sha256_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'inst/sha256_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/sha256_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'inst/sha256_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'inst/sha256_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/sha256_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1891.070 ; gain = 459.469 ; free physical = 5522 ; free virtual = 10521
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++-------------------+------------------------+---------------+----------------+
+|Module Name        | RTL Object             | Depth x Width | Implemented As | 
++-------------------+------------------------+---------------+----------------+
+|sha256_k_constants | tmp_K                  | 64x32         | LUT            | 
+|sha256_core        | k_constants_inst/tmp_K | 64x32         | LUT            | 
++-------------------+------------------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1891.070 ; gain = 459.469 ; free physical = 5521 ; free virtual = 10520
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1891.070 ; gain = 459.469 ; free physical = 5522 ; free virtual = 10521
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1891.070 ; gain = 459.469 ; free physical = 5521 ; free virtual = 10520
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1891.070 ; gain = 459.469 ; free physical = 5521 ; free virtual = 10520
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1891.070 ; gain = 459.469 ; free physical = 5511 ; free virtual = 10510
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1891.070 ; gain = 459.469 ; free physical = 5511 ; free virtual = 10510
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1891.070 ; gain = 459.469 ; free physical = 5522 ; free virtual = 10521
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1891.070 ; gain = 459.469 ; free physical = 5522 ; free virtual = 10521
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |   104|
+|2     |LUT1   |     1|
+|3     |LUT2   |   312|
+|4     |LUT3   |   164|
+|5     |LUT4   |   178|
+|6     |LUT5   |   403|
+|7     |LUT6   |  1580|
+|8     |MUXF7  |   130|
+|9     |MUXF8  |    33|
+|10    |FDCE   |  1046|
+|11    |FDRE   |   855|
+|12    |FDSE   |     2|
++------+-------+------+
+
+Report Instance Areas: 
++------+-----------------------------+--------------------+------+
+|      |Instance                     |Module              |Cells |
++------+-----------------------------+--------------------+------+
+|1     |top                          |                    |  4808|
+|2     |  inst                       |sha256_v1_0         |  4808|
+|3     |    sha256_v1_0_S00_AXI_inst |sha256_v1_0_S00_AXI |  4802|
+|4     |      core                   |sha256_core         |  3385|
+|5     |        w_mem_inst           |sha256_w_mem        |  1484|
++------+-----------------------------+--------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1891.070 ; gain = 459.469 ; free physical = 5522 ; free virtual = 10521
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 42 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1891.070 ; gain = 459.469 ; free physical = 5523 ; free virtual = 10522
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1891.078 ; gain = 459.469 ; free physical = 5523 ; free virtual = 10522
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 267 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1938.863 ; gain = 0.000 ; free physical = 5413 ; free virtual = 10430
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+33 Infos, 42 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1938.863 ; gain = 514.312 ; free physical = 5506 ; free virtual = 10535
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1938.863 ; gain = 0.000 ; free physical = 5512 ; free virtual = 10526
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Common 17-1381] The checkpoint '/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.runs/design_1_sha256_scannable_0_0_synth_1/design_1_sha256_scannable_0_0.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2353.883 ; gain = 415.020 ; free physical = 5106 ; free virtual = 10086
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_sha256_scannable_0_0, cache-ID = f9ccc89727b7e36f
+INFO: [Coretcl 2-1174] Renamed 4 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2356.852 ; gain = 0.000 ; free physical = 5101 ; free virtual = 10085
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/nasm/Projects/fpga_ip/fpga_experiments/fpga_experiments.runs/design_1_sha256_scannable_0_0_synth_1/design_1_sha256_scannable_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_sha256_scannable_0_0_utilization_synth.rpt -pb design_1_sha256_scannable_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Jul 12 10:48:22 2019...

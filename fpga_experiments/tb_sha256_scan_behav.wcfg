@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_sha256_scan_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="axi_vip_pkg" />
+            <top_module name="glbl" />
+            <top_module name="std" />
+            <top_module name="tb_sha256_scan" />
+            <top_module name="xil_common_vip_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="10379166666fs"></ZoomStartTime>
+      <ZoomEndTime time="16404166667fs"></ZoomEndTime>
+      <Cursor1Time time="13329167000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="253"></NameColumnWidth>
+      <ValueColumnWidth column_width="127"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="28" />
+   <wvobject type="logic" fp_name="/tb_sha256_scan/aclk">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_sha256_scan/aresetn">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sha256_scan/prot">
+      <obj_property name="ElementShortName">prot[2:0]</obj_property>
+      <obj_property name="ObjectShortName">prot[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sha256_scan/resp">
+      <obj_property name="ElementShortName">resp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">resp[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sha256_scan/REG_SNP1_ADDR">
+      <obj_property name="ElementShortName">REG_SNP1_ADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">REG_SNP1_ADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sha256_scan/REG_SNP2_ADDR">
+      <obj_property name="ElementShortName">REG_SNP2_ADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">REG_SNP2_ADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sha256_scan/REG_LENGTH">
+      <obj_property name="ElementShortName">REG_LENGTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">REG_LENGTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sha256_scan/REG_START_ADDR">
+      <obj_property name="ElementShortName">REG_START_ADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">REG_START_ADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sha256_scan/REG_STATUS">
+      <obj_property name="ElementShortName">REG_STATUS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">REG_STATUS[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_sha256_scan/DUT/design_1_i/sha256_scannable_0/inst/sha256_v1_0_S00_AXI_inst/core/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_sha256_scan/DUT/design_1_i/sha256_scannable_0/inst/sha256_v1_0_S00_AXI_inst/core/reset_n">
+      <obj_property name="ElementShortName">reset_n</obj_property>
+      <obj_property name="ObjectShortName">reset_n</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_sha256_scan/DUT/design_1_i/sha256_scannable_0/inst/sha256_v1_0_S00_AXI_inst/core/ready">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sha256_scan/DUT/design_1_i/sha256_scannable_0/inst/sha256_v1_0_S00_AXI_inst/core/digest">
+      <obj_property name="ElementShortName">digest[255:0]</obj_property>
+      <obj_property name="ObjectShortName">digest[255:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_sha256_scan/DUT/design_1_i/sha256_scannable_0/inst/sha256_v1_0_S00_AXI_inst/core/digest_valid">
+      <obj_property name="ElementShortName">digest_valid</obj_property>
+      <obj_property name="ObjectShortName">digest_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_sha256_scan/DUT/design_1_i/sha256_scannable_0/scan_enable">
+      <obj_property name="ElementShortName">scan_enable</obj_property>
+      <obj_property name="ObjectShortName">scan_enable</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_sha256_scan/DUT/design_1_i/sha256_scannable_0/scan_ck_en">
+      <obj_property name="ElementShortName">scan_ck_en</obj_property>
+      <obj_property name="ObjectShortName">scan_ck_en</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_sha256_scan/DUT/design_1_i/sha256_scannable_0/inst/sha256_v1_0_S00_AXI_inst/core/digest_valid">
+      <obj_property name="ElementShortName">digest_valid</obj_property>
+      <obj_property name="ObjectShortName">digest_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_sha256_scan/DUT/design_1_i/sha256_scannable_0/scan_output">
+      <obj_property name="ElementShortName">scan_output</obj_property>
+      <obj_property name="ObjectShortName">scan_output</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sha256_scan/DUT/design_1_i/sha256_scannable_0/inst/sha256_v1_0_S00_AXI_inst/core/sha256_ctrl_reg">
+      <obj_property name="ElementShortName">sha256_ctrl_reg[1:0]</obj_property>
+      <obj_property name="ObjectShortName">sha256_ctrl_reg[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sha256_scan/snapshot">
+      <obj_property name="ElementShortName">snapshot[504:0]</obj_property>
+      <obj_property name="ObjectShortName">snapshot[504:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sha256_scan/DUT/design_1_i/fast_ip_scanner_0/inst/scan_core_fifo_inst/dumped_chunk">
+      <obj_property name="ElementShortName">dumped_chunk[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dumped_chunk[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sha256_scan/DUT/design_1_i/fast_ip_scanner_0/inst/scan_core_fifo_inst/dumped_chunk_ptr">
+      <obj_property name="ElementShortName">dumped_chunk_ptr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dumped_chunk_ptr[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_sha256_scan/DUT/design_1_i/fast_ip_scanner_0/inst/scan_core_fifo_inst/cs_ready">
+      <obj_property name="ElementShortName">cs_ready</obj_property>
+      <obj_property name="ObjectShortName">cs_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_sha256_scan/DUT/design_1_i/fast_ip_scanner_0/inst/scan_core_fifo_inst/cs_is_read">
+      <obj_property name="ElementShortName">cs_is_read</obj_property>
+      <obj_property name="ObjectShortName">cs_is_read</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sha256_scan/DUT/design_1_i/fast_ip_scanner_0/inst/scan_core_fifo_inst/cs_data_i">
+      <obj_property name="ElementShortName">cs_data_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cs_data_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sha256_scan/DUT/design_1_i/fast_ip_scanner_0/inst/scan_core_fifo_inst/cs_data_o">
+      <obj_property name="ElementShortName">cs_data_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cs_data_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sha256_scan/DUT/design_1_i/fast_ip_scanner_0/inst/scan_core_fifo_inst/cs_address">
+      <obj_property name="ElementShortName">cs_address[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cs_address[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sha256_scan/DUT/design_1_i/fast_ip_scanner_0/inst/scan_core_fifo_inst/scanned_length">
+      <obj_property name="ElementShortName">scanned_length[31:0]</obj_property>
+      <obj_property name="ObjectShortName">scanned_length[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

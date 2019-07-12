@@ -1,0 +1,273 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xF1034A67C6AD9A79",
+      "device": "xc7z020clg484-1",
+      "name": "design_1",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "fast_ip_scanner_0": "",
+      "axi_vip_0": "",
+      "axi_vip_1": "",
+      "axi_vip_2": "",
+      "sha256_scannable_0": ""
+    },
+    "ports": {
+      "aresetn_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "aclk_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "aresetn_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_1_aclk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "fast_ip_scanner_0": {
+        "vlnv": "user.org:user:fast_ip_scanner:1.0",
+        "xci_name": "design_1_fast_ip_scanner_0_0"
+      },
+      "axi_vip_0": {
+        "vlnv": "xilinx.com:ip:axi_vip:1.1",
+        "xci_name": "design_1_axi_vip_0_0",
+        "parameters": {
+          "ADDR_WIDTH": {
+            "value": "32"
+          },
+          "DATA_WIDTH": {
+            "value": "32"
+          },
+          "HAS_BRESP": {
+            "value": "1"
+          },
+          "HAS_PROT": {
+            "value": "1"
+          },
+          "HAS_RRESP": {
+            "value": "1"
+          },
+          "HAS_WSTRB": {
+            "value": "1"
+          },
+          "INTERFACE_MODE": {
+            "value": "MASTER"
+          },
+          "PROTOCOL": {
+            "value": "AXI4LITE"
+          },
+          "READ_WRITE_MODE": {
+            "value": "READ_WRITE"
+          }
+        }
+      },
+      "axi_vip_1": {
+        "vlnv": "xilinx.com:ip:axi_vip:1.1",
+        "xci_name": "design_1_axi_vip_0_1",
+        "parameters": {
+          "ADDR_WIDTH": {
+            "value": "32"
+          },
+          "DATA_WIDTH": {
+            "value": "32"
+          },
+          "HAS_BRESP": {
+            "value": "1"
+          },
+          "HAS_PROT": {
+            "value": "1"
+          },
+          "HAS_RRESP": {
+            "value": "1"
+          },
+          "HAS_WSTRB": {
+            "value": "1"
+          },
+          "INTERFACE_MODE": {
+            "value": "MASTER"
+          },
+          "PROTOCOL": {
+            "value": "AXI4LITE"
+          },
+          "READ_WRITE_MODE": {
+            "value": "READ_WRITE"
+          }
+        }
+      },
+      "axi_vip_2": {
+        "vlnv": "xilinx.com:ip:axi_vip:1.1",
+        "xci_name": "design_1_axi_vip_0_2",
+        "parameters": {
+          "ADDR_WIDTH": {
+            "value": "32"
+          },
+          "DATA_WIDTH": {
+            "value": "32"
+          },
+          "INTERFACE_MODE": {
+            "value": "SLAVE"
+          },
+          "PROTOCOL": {
+            "value": "AXI4LITE"
+          },
+          "READ_WRITE_MODE": {
+            "value": "READ_WRITE"
+          }
+        }
+      },
+      "sha256_scannable_0": {
+        "vlnv": "user.org:user:sha256_scannable:1.0",
+        "xci_name": "design_1_sha256_scannable_0_0"
+      }
+    },
+    "interface_nets": {
+      "axi_vip_0_M_AXI": {
+        "interface_ports": [
+          "axi_vip_0/M_AXI",
+          "sha256_scannable_0/S00_AXI"
+        ]
+      },
+      "fast_ip_scanner_0_M00_AXI": {
+        "interface_ports": [
+          "axi_vip_2/S_AXI",
+          "fast_ip_scanner_0/M00_AXI"
+        ]
+      },
+      "axi_vip_1_M_AXI": {
+        "interface_ports": [
+          "fast_ip_scanner_0/S00_AXI",
+          "axi_vip_1/M_AXI"
+        ]
+      }
+    },
+    "nets": {
+      "sha256_scannable_0_scan_output": {
+        "ports": [
+          "sha256_scannable_0/scan_output",
+          "fast_ip_scanner_0/scan_output"
+        ]
+      },
+      "fast_ip_scanner_0_scan_input": {
+        "ports": [
+          "fast_ip_scanner_0/scan_input",
+          "sha256_scannable_0/scan_input"
+        ]
+      },
+      "fast_ip_scanner_0_scan_enable": {
+        "ports": [
+          "fast_ip_scanner_0/scan_enable",
+          "sha256_scannable_0/scan_enable"
+        ]
+      },
+      "fast_ip_scanner_0_scan_ck_en": {
+        "ports": [
+          "fast_ip_scanner_0/scan_ck_en",
+          "sha256_scannable_0/scan_ck_en"
+        ]
+      },
+      "aresetn_0_1": {
+        "ports": [
+          "aresetn_0",
+          "axi_vip_1/aresetn",
+          "axi_vip_0/aresetn",
+          "fast_ip_scanner_0/m00_axi_aresetn",
+          "fast_ip_scanner_0/s00_axi_aresetn",
+          "axi_vip_2/aresetn",
+          "sha256_scannable_0/s00_axi_aresetn"
+        ]
+      },
+      "aclk_0_1": {
+        "ports": [
+          "aclk_0",
+          "axi_vip_1/aclk",
+          "axi_vip_0/aclk",
+          "fast_ip_scanner_0/m00_axi_aclk",
+          "fast_ip_scanner_0/s00_axi_aclk",
+          "axi_vip_2/aclk",
+          "sha256_scannable_0/s00_axi_aclk"
+        ]
+      }
+    },
+    "addressing": {
+      "/fast_ip_scanner_0": {
+        "address_spaces": {
+          "M00_AXI": {
+            "range": "4G",
+            "width": "32",
+            "segments": {
+              "SEG_axi_vip_2_Reg": {
+                "address_block": "/axi_vip_2/S_AXI/Reg",
+                "offset": "0x00000000",
+                "range": "512M"
+              }
+            }
+          }
+        }
+      },
+      "/axi_vip_0": {
+        "address_spaces": {
+          "Master_AXI": {
+            "range": "4G",
+            "width": "32",
+            "segments": {
+              "SEG_sha256_scannable_0_S00_AXI_reg": {
+                "address_block": "/sha256_scannable_0/S00_AXI/S00_AXI_reg",
+                "offset": "0x44A00000",
+                "range": "4K"
+              }
+            }
+          }
+        }
+      },
+      "/axi_vip_1": {
+        "address_spaces": {
+          "Master_AXI": {
+            "range": "4G",
+            "width": "32",
+            "segments": {
+              "SEG_fast_ip_scanner_0_S00_AXI_reg": {
+                "address_block": "/fast_ip_scanner_0/S00_AXI/S00_AXI_reg",
+                "offset": "0x44C00000",
+                "range": "4K"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
