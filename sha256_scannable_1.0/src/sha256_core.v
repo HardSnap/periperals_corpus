@@ -199,11 +199,9 @@ module sha256_core(
                    H4_reg, H5_reg, H6_reg, H7_reg};
 
   assign digest_valid = digest_valid_reg;
+  assign scan_output = padding[22];
 
-  reg my_scan_output;
-  assign scan_output = my_scan_output;
-  
-  reg [15:0] padding;
+  reg [22:0] padding;
 
   //----------------------------------------------------------------
   // reg_update
@@ -234,14 +232,19 @@ module sha256_core(
           digest_valid_reg <= 0;
           t_ctr_reg        <= 6'h0;
           sha256_ctrl_reg  <= CTRL_IDLE;
-          my_scan_output   <= 1'b0;
           padding          <= 16'b0;
         end
       else if( scan_enable == 1'b1 )
         begin
             if( scan_ck_en == 1'b1 )
             begin
-my_scan_output <= padding[15];
+padding[22] <= padding[21];
+padding[21] <= padding[20];
+padding[20] <= padding[19];
+padding[19] <= padding[18];
+padding[18] <= padding[17];
+padding[17] <= padding[16];
+padding[16] <= padding[15];
 padding[15] <= padding[14];
 padding[14] <= padding[13];
 padding[13] <= padding[12];
@@ -749,7 +752,6 @@ sha256_ctrl_reg[0] <= sha256_ctrl_reg[1];
 sha256_ctrl_reg[1] <= sub_scan_output;
 
             end else begin
-                my_scan_output <= my_scan_output;                
             end
         end else begin
 

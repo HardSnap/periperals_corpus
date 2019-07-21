@@ -102,7 +102,6 @@ module sha256_w_mem(
 
 
   // Scan output
-  reg my_scan_output;
   assign scan_output = w_mem[15][31];
 
   //----------------------------------------------------------------
@@ -121,7 +120,6 @@ module sha256_w_mem(
             w_mem[i] <= 32'h0;
 
           w_ctr_reg <= 6'h0;
-          my_scan_output  <= 1'b0;
         end
       else
         begin
@@ -129,7 +127,6 @@ module sha256_w_mem(
           begin
               if( scan_ck_en == 1'b1 )
               begin
-//my_scan_output <= w_mem[15][31];
 w_mem[15][31] <= w_mem[15][30];
 w_mem[15][30] <= w_mem[15][29];
 w_mem[15][29] <= w_mem[15][28];
@@ -643,7 +640,6 @@ w_mem[00][2] <= w_mem[00][1];
 w_mem[00][1] <= w_mem[00][0];
 w_mem[00][0] <= scan_input;
           end else begin
-                my_scan_output <= my_scan_output;
               end
           end else begin
               if (w_mem_we)

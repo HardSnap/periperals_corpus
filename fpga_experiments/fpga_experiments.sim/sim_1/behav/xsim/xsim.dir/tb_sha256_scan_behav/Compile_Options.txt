@@ -1,1 +1,0 @@
--wto "0ccdcc0106a94e96823b881381a7f0e4" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "axi_infrastructure_v1_1_0" -L "axi_vip_v1_1_5" -L "xilinx_vip" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -L "xpm" --snapshot "tb_sha256_scan_behav" "xil_defaultlib.tb_sha256_scan" "xil_defaultlib.glbl" -log "elaborate.log" 
