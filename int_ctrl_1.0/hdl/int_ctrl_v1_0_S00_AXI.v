@@ -15,11 +15,11 @@
 	)
 	(
 		// Users to add ports here
-        input wire [7:0] intr_rq,
+        //input wire [7:0] intr_rq,
         // Ack from processor
-        input wire intr_in,
+        //input wire intr_in,
         // Interrupt to processor
-        output wire intr_out,
+        //output wire intr_out,
 
 		// User ports ends
 		// Do not modify the ports beyond this line
@@ -409,7 +409,6 @@
 	// Add user logic here   
     reg intr_in;
     reg [7:0] intr_rq_reg;
-    reg    [7:0]   intr_rq;
     reg     [7:0]   intr_ack_bus;     // Ack bus
     wire    [31:0]  priorities_table; // Interrupt Priorities Table
     wire    [7:0]   mask_table;       // Interrupt Mask Table
@@ -425,8 +424,8 @@
     //assign intr_mode        = 2'b10;
     
     IRQCtrlCore IntrCntrl_inst (
-    .clk_in(aclk),                 // Clock
-    .rst_in(~aresetn),             // Reset
+    .clk_in(S_AXI_ACLK),                 // Clock
+    .rst_in(~S_AXI_ARESETN),             // Reset
     .intr_rq(intr_rq_reg),                   // Interrupt request
     .intr_ack_bus(intr_ack_bus),         // Ack bus
     .intr_in(intr_in),                   // Ack from processor
@@ -442,20 +441,17 @@
                         DONE                 = 4'b0011;
 
     reg [3:0] state_reg;
-    wire current_irq_ack;
-    
-    assign current_irq_ack = slv_reg0[2];
 
-    always @( posedge aclk )
+    always @( posedge S_AXI_ACLK )
     begin
-        if( aresetn == 1'b0 )
+        if( S_AXI_ARESETN == 1'b0 )
         begin
             intr_rq_reg     <= 8'b0;
             intr_in         <= 1'b1;
             intr_ack_bus    <= 8'b0;
             state_reg       <= IDLE;
         end else begin
-            intr_rq_reg <= (intr_rq_reg | (intr_rq & (~mask_table)));
+            intr_rq_reg <= (intr_rq_reg | (slv_reg3[7:0] & (~mask_table)));
             case(state_reg)
             IDLE:
             begin
@@ -475,7 +471,7 @@
             WAIT_ACK:
             begin
                 // IRQ active, wait ack
-                if( current_irq_ack == 1'b1 ) begin
+                if( slv_reg0[2] == 1'b1 ) begin
                 
                     if( intr_mode == 2'b01 )
                         intr_ack_bus[7:0]  <= {5'b10100, current_irq};
@@ -484,17 +480,22 @@
                     intr_in            <= 1'b0;
                     intr_rq_reg[current_irq] <= 1'b0;
                     state_reg          <= DONE;
-                    current_irq_ack    <= 1'b0;
                 end else begin
-                    current_irq_ack  <= 1'b1;
                     intr_in          <= 1'b0;
                     state_reg        <= WAIT_ACK;
                 end        
             end
             DONE:
             begin
-                    intr_in        <= 1'b1;
-                    state_reg      <= IDLE;        
+                   // Wait until user pulse the irq ack bit
+                   // This avoid synchronisation issues
+                   if( slv_reg0[2] == 1'b0 )
+                   begin
+                        intr_in        <= 1'b1;
+                        state_reg      <= IDLE;        
+                   end else begin
+                        state_reg      <= DONE;
+                   end
             end
             default:
             begin

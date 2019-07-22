@@ -261,12 +261,18 @@
         <spirit:language>verilog</spirit:language>
         <spirit:modelName>int_ctrl_v1_0</spirit:modelName>
         <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogsynthesis_xilinx_com_ip_axi_vip_1_1__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogsynthesis_user_org_user_int_ctrl_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
           <spirit:localName>xilinx_verilogsynthesis_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e9b9fc6c</spirit:value>
+            <spirit:value>da28e9d2</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -277,12 +283,18 @@
         <spirit:language>verilog</spirit:language>
         <spirit:modelName>int_ctrl_v1_0</spirit:modelName>
         <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogbehavioralsimulation_xilinx_com_ip_axi_vip_1_1__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogbehavioralsimulation_user_org_user_int_ctrl_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
           <spirit:localName>xilinx_verilogbehavioralsimulation_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e9b9fc6c</spirit:value>
+            <spirit:value>da28e9d2</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -296,7 +308,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>76121a29</spirit:value>
+            <spirit:value>08b21dfc</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -332,14 +344,14 @@
         <spirit:name>xilinx_testbench</spirit:name>
         <spirit:displayName>Test Bench</spirit:displayName>
         <spirit:envIdentifier>:vivado.xilinx.com:simulation.testbench</spirit:envIdentifier>
-        <spirit:modelName>tb_intr_cntrl</spirit:modelName>
+        <spirit:modelName>tb_axi_slv_int_ctrl</spirit:modelName>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_testbench_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>23f24c02</spirit:value>
+            <spirit:value>c40f1903</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -690,22 +702,46 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
+        <spirit:name>hdl/IRQCtrlCore.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/int_ctrl_v1_0_S00_AXI.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/int_ctrl_v1_0.v</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_c5759cd2</spirit:userFileType>
       </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/IRQCtrlCore.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_4b974b07</spirit:userFileType>
-      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogsynthesis_xilinx_com_ip_axi_vip_1_1__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_vip" xilinx:version="1.1">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogsynthesis_user_org_user_int_ctrl_1_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="user.org" xilinx:library="user" xilinx:name="int_ctrl" xilinx:version="1.0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
+        <spirit:name>hdl/IRQCtrlCore.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/int_ctrl_v1_0_S00_AXI.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
@@ -713,10 +749,26 @@
         <spirit:name>hdl/int_ctrl_v1_0.v</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/IRQCtrlCore.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogbehavioralsimulation_xilinx_com_ip_axi_vip_1_1__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_vip" xilinx:version="1.1">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogbehavioralsimulation_user_org_user_int_ctrl_1_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="user.org" xilinx:library="user" xilinx:name="int_ctrl" xilinx:version="1.0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_softwaredriver_view_fileset</spirit:name>
@@ -769,16 +821,16 @@
     <spirit:fileSet>
       <spirit:name>xilinx_testbench_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>src/tb_intr_cntrl.sv</spirit:name>
+        <spirit:name>hdl/tb_axi_slv_int_ctrl.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
         <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
+        <spirit:userFileType>USED_IN_testbench</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../interrupt_controller/interrupt_controller.tmp/int_ctrl_v1_0_project/tb_intr_cntrl_behav.wcfg</spirit:name>
+        <spirit:name>../int_cntrl_fpga/int_cntrl_fpga.tmp/int_ctrl_v1_0_project/tb_axi_slv_int_ctrl_behav.wcfg</spirit:name>
         <spirit:fileType>unknown</spirit:fileType>
         <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_testbench</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>
@@ -848,8 +900,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>int_ctrl_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>3</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-07-21T16:22:44Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>5</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2019-07-22T16:41:41Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@6afbe64b_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@45e7fae7_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
@@ -1344,13 +1396,176 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@359e6740_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@5f8c6441_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@343bc8a3_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3dbb3c03_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78b59073_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2732b8f4_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76874740_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19b894fa_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7003a3f5_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21ed7659_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@227cab7d_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3952b86_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@979a8bc_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d6ebc05_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30d9c43c_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@287bb412_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28464f62_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61f1d803_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a5620a3_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b2272c8_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76a261c5_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b0dae37_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17176bb1_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47dd9cd3_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ecf8584_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e07b387_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6225fa2f_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1beee996_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@500ec116_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d81c433_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@564cb3ef_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52553279_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ccf3879_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c1361ff_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23327601_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a2b4cad_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@730a552d_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c2418cd_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22bd02d4_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f3bca15_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50ce815d_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d64ae2e_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c0b0f19_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bb39158_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3860f4af_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47b54729_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74d56a40_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f2f1327_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16358c3e_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6619cdb2_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56bc502a_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4af3dff_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e433e1f_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7bc6f816_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@551a3b77_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79c725a4_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4faa96f4_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@307d69fa_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fa604ef_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70fce09_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f56d245_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bfcc63a_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b9fa962_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60e7051a_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1dc45aae_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56b698a3_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6083069c_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a65c146_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49243d5e_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7aba2377_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@176939b1_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43cead6a_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@631948f0_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a5fb826_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29e41ec7_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67f1a35f_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a8ce32a_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bc4eeaa_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11a85ecb_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ac7bf1f_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@346561de_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35153dcb_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49c09f14_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6272f574_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e46ef25_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@159b8af6_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ca50efb_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c8fa435_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8408e3a_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5011396c_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70329688_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@554e97c6_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a5e6967_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@732b4aad_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37b153dd_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20c922d5_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bf19b9e_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47176512_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71a250ca_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16b555bf_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1681df3f_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7005d2b2_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@268f74a1_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33304fef_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4dcad005_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d7876c0_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51a695a0_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@639f7cf0_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ecb85f6_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59c2586d_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e5e626e_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36fc49d6_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fcf8712_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@263b5f2b_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58eabc1c_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@509c3dec_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4819cd46_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37823918_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50cd773e_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@526cd7a6_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25c16919_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ea5625d_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d4a460e_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e5e337d_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@488ed3c6_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15411e83_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11a8777_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29eebe49_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e2dc0bb_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@346d16cd_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a2e392f_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f9378e2_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4384e744_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a11e2f8_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@112a9912_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68395384_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7072f877_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76ccf756_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@258be878_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d0ea4e9_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12bbf340_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b9a2e41_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27c44cfa_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@bda65b9_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ca690c5_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f20925d_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26410aa4_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@dbad614_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43b26a72_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@276917e0_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47d6a416_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1057d4bf_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17d9315_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29500a1a_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@402960e2_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77d6c244_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1cf34be9_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49b21be3_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35fcb057_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42c701c6_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69098528_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60efb6a5_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b79f0df_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47e2936a_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6368cf79_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50b81ecf_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/int_ctrl_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="7a63f3fc"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="5193a0dd"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="3128ec51"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="aa312806"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="6992ea72"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="0549dcb2"/>
