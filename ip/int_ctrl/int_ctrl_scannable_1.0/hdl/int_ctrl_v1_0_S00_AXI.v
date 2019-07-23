@@ -15,7 +15,10 @@
 	)
 	(
 		// Users to add ports here
-
+        output wire scan_output,
+        input  wire scan_input,
+        input  wire scan_enable,
+        input  wire scan_ck_en,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -427,6 +430,7 @@
 
 	// Add user logic here   
     reg intr_in;
+    wire intr_out;
     reg [7:0] intr_rq_reg;
     reg     [7:0]   intr_ack_bus;     // Ack bus
     wire    [31:0]  priorities_table; // Interrupt Priorities Table
@@ -441,8 +445,14 @@
     assign current_irq      = intr_bus[2:0];
     //assign mask_table       = 8'b00000011;
     //assign intr_mode        = 2'b10;
-    
+
+    wire scan_output2;
+
     IRQCtrlCore IntrCntrl_inst (
+    .scan_output(scan_output2),
+    .scan_input(scan_input),
+    .scan_enable(scan_enable),
+    .scan_ck_en(scan_ck_en),
     .clk_in(S_AXI_ACLK),                 // Clock
     .rst_in(~S_AXI_ARESETN),             // Reset
     .intr_rq(intr_rq_reg),                   // Interrupt request
@@ -454,12 +464,15 @@
     .intr_bus(intr_bus)                  // Current interrupt id
     );
 
-    localparam  [3:0]   IDLE                 = 4'b0000,
-                        ACTIVE_IRQ           = 4'b0001,
-                        WAIT_ACK             = 4'b0010,
-                        DONE                 = 4'b0011;
+    localparam  [1:0]   IDLE                 = 4'b00,
+                        ACTIVE_IRQ           = 4'b01,
+                        WAIT_ACK             = 4'b10,
+                        DONE                 = 4'b11;
 
-    reg [3:0] state_reg;
+    reg [1:0] state_reg;
+    reg [1:0] padding;
+
+    assign scan_output = padding[0];
 
     always @( posedge S_AXI_ACLK )
     begin
@@ -469,6 +482,33 @@
             intr_in         <= 1'b1;
             intr_ack_bus    <= 8'b0;
             state_reg       <= IDLE;
+            padding         <= 2'b00;
+        end else if (scan_enable == 1'b1) begin
+            if( scan_ck_en == 1'b1) begin
+                padding[1]      <= padding[0];
+                padding[0]      <= intr_rq_reg[7];
+                intr_rq_reg[7]  <= intr_rq_reg[6];
+                intr_rq_reg[6]  <= intr_rq_reg[5];
+                intr_rq_reg[5]  <= intr_rq_reg[4];
+                intr_rq_reg[4]  <= intr_rq_reg[3];
+                intr_rq_reg[3]  <= intr_rq_reg[2];
+                intr_rq_reg[2]  <= intr_rq_reg[1];
+                intr_rq_reg[1]  <= intr_rq_reg[0];
+                intr_rq_reg[0]  <= intr_in;
+                intr_in         <= intr_ack_bus[7];
+                intr_ack_bus[7] <= intr_ack_bus[6];
+                intr_ack_bus[6] <= intr_ack_bus[5];
+                intr_ack_bus[5] <= intr_ack_bus[4];
+                intr_ack_bus[4] <= intr_ack_bus[3];
+                intr_ack_bus[3] <= intr_ack_bus[2];
+                intr_ack_bus[2] <= intr_ack_bus[1];
+                intr_ack_bus[1] <= intr_ack_bus[0];
+                intr_ack_bus[0] <= state_reg[1];
+                state_reg[1]    <= state_reg[0];
+                state_reg[0]    <= scan_output2;
+            end else begin
+            
+            end
         end else begin
             intr_rq_reg <= (intr_rq_reg | (slv_reg3[7:0] & (~mask_table)));
             case(state_reg)

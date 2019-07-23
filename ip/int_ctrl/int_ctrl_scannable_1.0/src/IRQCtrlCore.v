@@ -21,6 +21,11 @@
 
 
 module IRQCtrlCore(
+        output wire scan_output,
+        input  wire scan_input,
+        input  wire scan_enable,
+        input  wire scan_ck_en,
+
         input   wire            clk_in,           // Clock
         input   wire            rst_in,           // Reset
         input   wire    [7:0]   intr_rq,          // Interrupt request
@@ -58,6 +63,8 @@ module IRQCtrlCore(
     reg             intrOut_reg, intrOut_next;      // Interrupt output
     integer         i;
 
+    assign scan_output = state_reg[3];
+
     //
     // Main FSM of the controller. The state machine is clocked. The output and next state logic
     // are purely combinational.
@@ -73,9 +80,53 @@ module IRQCtrlCore(
             for (i = 0; i < 8; i = i + 1) begin
                 prior_table_reg[i]  <=  3'b000;
             end
-        end
- 
-        else begin
+        end else if( scan_enable == 1'b1) begin
+            if( scan_enable == 1'b1) begin
+                //SCAN CHAIN
+                state_reg[3]          <=  state_reg[2];
+                state_reg[2]          <=  state_reg[1];
+                state_reg[1]          <=  state_reg[0];
+                state_reg[0]          <=  intrBus_reg[7];
+                intrBus_reg[7]        <=  intrBus_reg[6];
+                intrBus_reg[6]        <=  intrBus_reg[5];
+                intrBus_reg[5]        <=  intrBus_reg[4];
+                intrBus_reg[4]        <=  intrBus_reg[3];
+                intrBus_reg[3]        <=  intrBus_reg[2];
+                intrBus_reg[2]        <=  intrBus_reg[1];
+                intrBus_reg[1]        <=  intrBus_reg[0];
+                intrBus_reg[0]        <=  intrOut_reg;
+                intrOut_reg           <=  intrIndex_reg;
+                intrIndex_reg         <=  intrPtr_reg[2];
+                intrPtr_reg[2]        <=  intrPtr_reg[1];
+                intrPtr_reg[1]        <=  intrPtr_reg[0];
+                intrPtr_reg[0]        <=  prior_table_reg[7][2];
+                prior_table_reg[7][2] <=  prior_table_reg[7][1];
+                prior_table_reg[7][1] <=  prior_table_reg[7][0];
+                prior_table_reg[7][0] <=  prior_table_reg[6][2];
+                prior_table_reg[6][2] <=  prior_table_reg[6][1];
+                prior_table_reg[6][1] <=  prior_table_reg[6][0];
+                prior_table_reg[6][0] <=  prior_table_reg[5][2];
+                prior_table_reg[5][2] <=  prior_table_reg[5][1];
+                prior_table_reg[5][1] <=  prior_table_reg[5][0];
+                prior_table_reg[5][0] <=  prior_table_reg[4][2];
+                prior_table_reg[4][2] <=  prior_table_reg[4][1];
+                prior_table_reg[4][1] <=  prior_table_reg[4][0];
+                prior_table_reg[4][0] <=  prior_table_reg[3][2];
+                prior_table_reg[3][2] <=  prior_table_reg[3][1];
+                prior_table_reg[3][1] <=  prior_table_reg[3][0];
+                prior_table_reg[3][0] <=  prior_table_reg[2][2];
+                prior_table_reg[2][2] <=  prior_table_reg[2][1];
+                prior_table_reg[2][1] <=  prior_table_reg[2][0];
+                prior_table_reg[2][0] <=  prior_table_reg[1][2];
+                prior_table_reg[1][2] <=  prior_table_reg[1][1];
+                prior_table_reg[1][1] <=  prior_table_reg[1][0];
+                prior_table_reg[1][0] <=  prior_table_reg[0][2];
+                prior_table_reg[0][2] <=  prior_table_reg[0][1];
+                prior_table_reg[0][1] <=  prior_table_reg[0][0];
+                prior_table_reg[0][0] <=  scan_input;
+            end else begin
+            end
+        end else begin
             state_reg           <=  state_next;
             intrBus_reg         <=  intrBus_next;
             intrOut_reg         <=  intrOut_next;

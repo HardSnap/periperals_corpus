@@ -15,7 +15,10 @@
 	)
 	(
 		// Users to add ports here
-
+        output wire scan_output,
+        input  wire scan_input,
+        input  wire scan_enable,
+        input  wire scan_ck_en,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -48,6 +51,10 @@
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
 	) int_ctrl_v1_0_S00_AXI_inst (
+        .scan_output(scan_output),
+        .scan_input(scan_input),
+        .scan_enable(scan_enable),
+        .scan_ck_en(scan_ck_en),
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),
