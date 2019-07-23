@@ -2,7 +2,7 @@
 <spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <spirit:vendor>user.org</spirit:vendor>
   <spirit:library>user</spirit:library>
-  <spirit:name>AES_CTR</spirit:name>
+  <spirit:name>aes_ctr_scannable</spirit:name>
   <spirit:version>1.0</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
@@ -173,7 +173,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>WIZ_NUM_REG</spirit:name>
-          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.S00_AXI.WIZ_NUM_REG" spirit:minimum="4" spirit:maximum="512" spirit:rangeType="long">33</spirit:value>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.S00_AXI.WIZ_NUM_REG" spirit:minimum="4" spirit:maximum="512" spirit:rangeType="long">4</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>SUPPORTS_NARROW_BURST</spirit:name>
@@ -259,14 +259,14 @@
         <spirit:displayName>Verilog Synthesis</spirit:displayName>
         <spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
         <spirit:language>verilog</spirit:language>
-        <spirit:modelName>AES_CTR_v1_0</spirit:modelName>
+        <spirit:modelName>aes_ctr_scannable_v1_0</spirit:modelName>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_verilogsynthesis_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>2f05bb77</spirit:value>
+            <spirit:value>5cba434e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -275,14 +275,14 @@
         <spirit:displayName>Verilog Simulation</spirit:displayName>
         <spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
         <spirit:language>verilog</spirit:language>
-        <spirit:modelName>AES_CTR_v1_0</spirit:modelName>
+        <spirit:modelName>aes_ctr_scannable_v1_0</spirit:modelName>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_verilogbehavioralsimulation_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>2f05bb77</spirit:value>
+            <spirit:value>5cba434e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -296,7 +296,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>a64c3733</spirit:value>
+            <spirit:value>220e06a9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -331,11 +331,63 @@
     </spirit:views>
     <spirit:ports>
       <spirit:port>
+        <spirit:name>scan_input</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>scan_output</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>scan_ck_en</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>scan_enable</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
         <spirit:name>s00_axi_awaddr</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">7</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">3</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -498,7 +550,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">7</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">3</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -651,7 +703,7 @@
         <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
         <spirit:displayName>C S00 AXI ADDR WIDTH</spirit:displayName>
         <spirit:description>Width of S_AXI address bus</spirit:description>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">8</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">4</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -683,6 +735,10 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/aes_ctr_scannable_v1_0_S00_AXI.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>src/round.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
@@ -691,13 +747,9 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/AES_CTR_v1_0_S00_AXI.v</spirit:name>
-        <spirit:fileType>systemVerilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/AES_CTR_v1_0.v</spirit:name>
+        <spirit:name>hdl/aes_ctr_scannable_v1_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_e9bc0645</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_787cc5bb</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -711,6 +763,10 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/aes_ctr_scannable_v1_0_S00_AXI.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>src/round.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
@@ -719,42 +775,38 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/AES_CTR_v1_0_S00_AXI.v</spirit:name>
-        <spirit:fileType>systemVerilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/AES_CTR_v1_0.v</spirit:name>
+        <spirit:name>hdl/aes_ctr_scannable_v1_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_softwaredriver_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>drivers/AES_CTR_v1_0/data/AES_CTR.mdd</spirit:name>
+        <spirit:name>drivers/aes_ctr_scannable_v1_0/data/aes_ctr_scannable.mdd</spirit:name>
         <spirit:userFileType>mdd</spirit:userFileType>
         <spirit:userFileType>driver_mdd</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/AES_CTR_v1_0/data/AES_CTR.tcl</spirit:name>
+        <spirit:name>drivers/aes_ctr_scannable_v1_0/data/aes_ctr_scannable.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
         <spirit:userFileType>driver_tcl</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/AES_CTR_v1_0/src/Makefile</spirit:name>
+        <spirit:name>drivers/aes_ctr_scannable_v1_0/src/Makefile</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/AES_CTR_v1_0/src/AES_CTR.h</spirit:name>
+        <spirit:name>drivers/aes_ctr_scannable_v1_0/src/aes_ctr_scannable.h</spirit:name>
         <spirit:fileType>cSource</spirit:fileType>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/AES_CTR_v1_0/src/AES_CTR.c</spirit:name>
+        <spirit:name>drivers/aes_ctr_scannable_v1_0/src/aes_ctr_scannable.c</spirit:name>
         <spirit:fileType>cSource</spirit:fileType>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/AES_CTR_v1_0/src/AES_CTR_selftest.c</spirit:name>
+        <spirit:name>drivers/aes_ctr_scannable_v1_0/src/aes_ctr_scannable_selftest.c</spirit:name>
         <spirit:fileType>cSource</spirit:fileType>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
@@ -762,7 +814,7 @@
     <spirit:fileSet>
       <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>xgui/AES_CTR_v1_0.tcl</spirit:name>
+        <spirit:name>xgui/aes_ctr_scannable_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_fd592ead</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
@@ -795,7 +847,7 @@
       <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
       <spirit:displayName>C S00 AXI ADDR WIDTH</spirit:displayName>
       <spirit:description>Width of S_AXI address bus</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">8</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">4</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -830,7 +882,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">AES_CTR_v1_0</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">aes_ctr_scannable_v1_0</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
@@ -841,70 +893,39 @@
       <xilinx:taxonomies>
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
-      <xilinx:displayName>AES_CTR_v1.0</xilinx:displayName>
+      <xilinx:displayName>aes_ctr_scannable_v1.0</xilinx:displayName>
       <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-06-05T15:10:38Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2019-07-23T21:03:53Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f26d752_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6623a122_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c31f41a_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6cc0e357_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b17013b_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@62debde0_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@46b91d4e_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@529f6455_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@67427738_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@97d6c44_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4dffbdb6_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@dabdf4b_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5013149b_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@71e0909_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3574e8a_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6acb3073_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f7607dd_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@448b1971_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5250c843_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f06a289_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ab97bdb_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@49891675_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2954a308_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7139f78c_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@784d3cc7_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@1270897d_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@77254593_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@726fa091_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@1418df1a_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@85a797_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a104f28_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@342e1b50_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@385b1648_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@f1f8495_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a3a7a42_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@47843b8d_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b6f9570_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b7f7605_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d088949_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ae01510_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@53eda84d_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@9d538fd_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c22b455_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b961b6a_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2edf8f58_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@37f072eb_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3eff1793_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@45b5206f_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@610fd16a_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ad0e735_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/AES_CTR_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ab7f2e2_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a9c190f_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@265fa3db_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a33cdd1_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@530d05fa_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c880e2b_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15cf4fba_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d8a89a2_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a68050d_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bb07499_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d124b20_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45e95c22_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c871155_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ea3475c_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53a59e37_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@240524d_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75c32001_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5217058c_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e0ab56d_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="0e9a2121"/>
+      <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="7a6aebf4"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="064a1528"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="9fb4a503"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="fba08ac4"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="8e0ed9ca"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="2f0fd936"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="236cb5b6"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="6992ea72"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="eec44307"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

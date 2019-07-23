@@ -1,7 +1,7 @@
 
 `timescale 1 ns / 1 ps
 
-	module AES_CTR_v1_0 #
+	module aes_ctr_scannable_v1_0 #
 	(
 		// Users to add parameters here
 
@@ -11,7 +11,7 @@
 
 		// Parameters of Axi Slave Bus Interface S00_AXI
 		parameter integer C_S00_AXI_DATA_WIDTH	= 32,
-		parameter integer C_S00_AXI_ADDR_WIDTH	= 8
+		parameter integer C_S00_AXI_ADDR_WIDTH	= 4
 	)
 	(
 		// Users to add ports here
@@ -47,10 +47,10 @@
 		input wire  s00_axi_rready
 	);
 // Instantiation of Axi Bus Interface S00_AXI
-	AES_CTR_v1_0_S00_AXI # (
+	aes_ctr_scannable_v1_0_S00_AXI # ( 
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
-	) AES_CTR_v1_0_S00_AXI_inst (
+	) aes_ctr_scannable_v1_0_S00_AXI_inst (
 		.scan_input(scan_input),
 		.scan_output(scan_output),
 		.scan_ck_en(scan_ck_en),

@@ -1,6 +1,6 @@
 
 
 /***************************** Include Files *******************************/
-#include "AES_CTR.h"
+#include "aes_ctr_scannable.h"
 
 /************************** Function Definitions ***************************/

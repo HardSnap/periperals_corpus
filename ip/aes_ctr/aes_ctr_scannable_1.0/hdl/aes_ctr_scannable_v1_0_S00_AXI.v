@@ -1,7 +1,7 @@
 
 `timescale 1 ns / 1 ps
 
-	module AES_CTR_v1_0_S00_AXI #
+	module aes_ctr_scannable_v1_0_S00_AXI #
 	(
 		// Users to add parameters here
 
@@ -11,7 +11,7 @@
 		// Width of S_AXI data bus
 		parameter integer C_S_AXI_DATA_WIDTH	= 32,
 		// Width of S_AXI address bus
-		parameter integer C_S_AXI_ADDR_WIDTH	= 8
+		parameter integer C_S_AXI_ADDR_WIDTH	= 4
 	)
 	(
 		// Users to add ports here

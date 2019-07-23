@@ -57,13 +57,27 @@ xS
 assign out[15:8] = out[23:16] ^ out[7:0];
 endmodule
 
-    /* S box */
-    module S (clk, in, out);
+/* S box */
+module S (clk, scan_input, scan_output, scan_ck_en, scan_enable, in, out);
+input  scan_input;
+output scan_output;
+input  scan_ck_en;
+input  scan_enable;
 input clk;
 input [7:0] in;
 output reg [7:0] out;
 
+assign scan_output = out[7];
+
 always @ (posedge clk)
+    if( scan_enable == 1'b1 )
+    begin
+      if( scan_clk_en == 1'b1 )
+      begin
+        out <= {out[6:0], scan_input};
+      end else begin
+      end
+    end else begin
     case (in)
         8'h00:
             out <= 8'h63;
@@ -578,15 +592,30 @@ always @ (posedge clk)
         8'hff:
             out <= 8'h16;
     endcase
+    end
 endmodule
 
-    /* S box * x */
-    module xS (clk, in, out);
+/* S box * x */
+module xS (clk, scan_input, scan_output, scan_ck_en, scan_enable, in, out);
+input  scan_input;
+output scan_output;
+input  scan_ck_en;
+input  scan_enable;
 input clk;
 input [7:0] in;
 output reg [7:0] out;
 
+assign scan_output = out[7];
+
 always @ (posedge clk)
+    if( scan_enable == 1'b1 )
+    begin
+      if( scan_ck_en == 1'b1 )
+      begin
+        out <= {out[6:0], scan_input};
+      end else begin
+      end
+    end else begin
     case (in)
         8'h00:
             out <= 8'hc6;
@@ -1101,4 +1130,5 @@ always @ (posedge clk)
         8'hff:
             out <= 8'h2c;
     endcase
+    end
 endmodule

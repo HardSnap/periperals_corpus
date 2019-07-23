@@ -17,7 +17,11 @@
 /* verilator lint_off UNOPTFLAT */
 
 /* one AES round for every two clock cycles */
-module one_round (clk, state_in, key, state_out);
+module one_round (clk, scan_input, scan_output, scan_ck_en, scan_enable, state_in, key, state_out);
+input  scan_input;
+output scan_output;
+input  scan_ck_en;
+input  scan_enable;
 input              clk;
 input      [127:0] state_in, key;
 output reg [127:0] state_out;
@@ -44,12 +48,26 @@ assign z1 = p03 ^ p10 ^ p21 ^ p32 ^ k1;
 assign z2 = p02 ^ p13 ^ p20 ^ p31 ^ k2;
 assign z3 = p01 ^ p12 ^ p23 ^ p30 ^ k3;
 
+assign scan_output = state_out[127];
+
 always @ (posedge clk)
+    if( scan_enable == 1'b1 )
+    begin
+      if( scan_ck_en == 1'b1 )
+      begin
+        state_out <= {state_out[126:0], scan_input};
+      end
+    end else begin
     state_out <= {z0, z1, z2, z3};
+    end
 endmodule
 
-    /* AES final round for every two clock cycles */
-    module final_round (clk, state_in, key_in, state_out);
+/* AES final round for every two clock cycles */
+module final_round (clk, scan_input, scan_output, scan_ck_en, scan_enable, state_in, key_in, state_out);
+input  scan_input;
+output scan_output;
+input  scan_ck_en;
+input  scan_enable;
 input              clk;
 input      [127:0] state_in;
 input      [127:0] key_in;
@@ -77,7 +95,16 @@ assign z1 = {p10, p21, p32, p03} ^ k1;
 assign z2 = {p20, p31, p02, p13} ^ k2;
 assign z3 = {p30, p01, p12, p23} ^ k3;
 
-always @ (posedge clk)
-    state_out <= {z0, z1, z2, z3};
-endmodule
+assign scan_output = state_out[127];
 
+always @ (posedge clk)
+  if( scan_enable == 1'b1 )
+  begin
+    if( scan_ck_en == 1'b1 )
+    begin
+        state_out <= {state_out[126:0], scan_input};
+    end
+  end else begin
+  state_out <= {z0, z1, z2, z3};
+  end
+endmodule
