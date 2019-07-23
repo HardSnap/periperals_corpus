@@ -31,6 +31,8 @@ wire   [127:0] s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11;
 wire   [191:0] k1, k2, k3, k4, k5, k6, k7, k8, k9, k10, k11;
 wire   [127:0] k0b, k1b, k2b, k3b, k4b, k5b, k6b, k7b, k8b, k9b, k10b, k11b;
 
+assign scan_output = start_r;
+
 reg start_r;
 always @(posedge clk)
     begin
@@ -38,7 +40,7 @@ always @(posedge clk)
       begin
         if( scan_ck_en == 1'b1 )
         begin
-
+          start_r <= s0[127];
         end
       end else begin
       start_r <= start;
@@ -60,8 +62,18 @@ wire scan_output9;
 wire scan_output10;
 wire scan_output11;
 wire scan_output12;
+wire scan_output13;
+wire scan_output14;
+wire scan_output15;
+wire scan_output16;
+wire scan_output17;
+wire scan_output18;
+wire scan_output19;
+wire scan_output20;
+wire scan_output21;
+wire scan_output22;
+wire scan_output23;
 
-assign scan_output = s0[127];
 
 always @ (posedge clk)
 begin
@@ -71,7 +83,7 @@ begin
       begin
         so <= {s0[126:0], k0[191]};
         k0 <= {k0[190:0], validCounter[4]};
-        validCounter[4] <= {validCounter[3:0], scan_output12};
+        validCounter[4] <= {validCounter[3:0], scan_output23};
       end
     end else begin
       if(start_posedge)
@@ -103,17 +115,17 @@ expand_key_type_B_192 a10 (clk, scan_output10, scan_output11, scan_ck_en, scan_e
 expand_key_type_A_192 a11 (clk, scan_output11, scan_output12, scan_ck_en, scan_enable, k11, 8'h80,    , k11b);
 
 one_round
-    r1 (clk, s0, k0b, s1),
-    r2 (clk, s1, k1b, s2),
-    r3 (clk, s2, k2b, s3),
-    r4 (clk, s3, k3b, s4),
-    r5 (clk, s4, k4b, s5),
-    r6 (clk, s5, k5b, s6),
-    r7 (clk, s6, k6b, s7),
-    r8 (clk, s7, k7b, s8),
-    r9 (clk, s8, k8b, s9),
-    r10 (clk, s9, k9b, s10),
-    r11 (clk, s10, k10b, s11);
+    r1 (clk, scan_output12, scan_output13, scan_ck_en, scan_enable, s0, k0b, s1),
+    r2 (clk, scan_output13, scan_output14, scan_ck_en, scan_enable, s1, k1b, s2),
+    r3 (clk, scan_output14, scan_output15, scan_ck_en, scan_enable, s2, k2b, s3),
+    r4 (clk, scan_output15, scan_output16, scan_ck_en, scan_enable, s3, k3b, s4),
+    r5 (clk, scan_output16, scan_output17, scan_ck_en, scan_enable, s4, k4b, s5),
+    r6 (clk, scan_output17, scan_output18, scan_ck_en, scan_enable, s5, k5b, s6),
+    r7 (clk, scan_output18, scan_output19, scan_ck_en, scan_enable, s6, k6b, s7),
+    r8 (clk, scan_output19, scan_output20, scan_ck_en, scan_enable, s7, k7b, s8),
+    r9 (clk, scan_output20, scan_output21, scan_ck_en, scan_enable, s8, k8b, s9),
+    r10 (clk, scan_output21, scan_output22, scan_ck_en, scan_enable, s9, k9b, s10),
+    r11 (clk, scan_output22, scan_output23, scan_ck_en, scan_enable, s10, k10b, s11);
 
 final_round
     rf (clk, s11, k11b, out);
