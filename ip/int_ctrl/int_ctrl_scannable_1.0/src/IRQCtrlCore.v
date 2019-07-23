@@ -81,7 +81,7 @@ module IRQCtrlCore(
                 prior_table_reg[i]  <=  3'b000;
             end
         end else if( scan_enable == 1'b1) begin
-            if( scan_enable == 1'b1) begin
+            if( scan_ck_en == 1'b1) begin
                 //SCAN CHAIN
                 state_reg[3]          <=  state_reg[2];
                 state_reg[2]          <=  state_reg[1];

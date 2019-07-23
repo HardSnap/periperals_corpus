@@ -470,9 +470,9 @@
                         DONE                 = 4'b11;
 
     reg [1:0] state_reg;
-    reg [1:0] padding;
+    reg [3:0] padding;
 
-    assign scan_output = padding[0];
+    assign scan_output = padding[3];
 
     always @( posedge S_AXI_ACLK )
     begin
@@ -484,7 +484,9 @@
             state_reg       <= IDLE;
             padding         <= 2'b00;
         end else if (scan_enable == 1'b1) begin
-            if( scan_ck_en == 1'b1) begin
+            if( scan_ck_en == 1'b1) begin // 21 + 41 = 62
+                padding[3]      <= padding[2];
+                padding[2]      <= padding[1];
                 padding[1]      <= padding[0];
                 padding[0]      <= intr_rq_reg[7];
                 intr_rq_reg[7]  <= intr_rq_reg[6];
