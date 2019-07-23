@@ -53,6 +53,10 @@ make_wrapper -files [get_files /home/nasm/Projects/fpga_ip/int_ctrl_scannable_si
 add_files -norecurse /home/nasm/Projects/fpga_ip/int_ctrl_scannable_simu/int_ctrl_scannable_simu.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
 assign_bd_address [get_bd_addr_segs {fast_ip_scanner_0/S00_AXI/S00_AXI_reg }]
 assign_bd_address [get_bd_addr_segs {int_ctrl_0/S00_AXI/S00_AXI_reg }]
+open_bd_design {/home/nasm/Projects/fpga_ip/int_ctrl_scannable_simu/int_ctrl_scannable_simu.srcs/sources_1/bd/design_1/design_1.bd}
+assign_bd_address [get_bd_addr_segs {axi_vip_2/S_AXI/Reg }]
+set_property offset 0x00000000 [get_bd_addr_segs {fast_ip_scanner_0/M00_AXI/SEG_axi_vip_2_Reg}]
+set_property range 512M [get_bd_addr_segs {fast_ip_scanner_0/M00_AXI/SEG_axi_vip_2_Reg}]
 set_property offset 0x44C00000 [get_bd_addr_segs {axi_vip_1/Master_AXI/SEG_int_ctrl_0_S00_AXI_reg}]
 save_bd_design
 
@@ -71,6 +75,9 @@ update_compile_order -fileset sources_1
 set_property top tb_axi_slv_int_ctrl [get_filesets sim_1]
 set_property top_lib xil_defaultlib [get_filesets sim_1]
 update_compile_order -fileset sim_1
+
+add_files -fileset sim_1 -norecurse /home/nasm/Projects/fpga_ip/scripts/simu_int_ctrl/tb_axi_slv_scannable_int_ctrl_behav.wcfg
+set_property xsim.view /home/nasm/Projects/fpga_ip/scripts/simu_int_ctrl/tb_axi_slv_scannable_int_ctrl_behav.wcfg [get_filesets sim_1]
 
 launch_simulation
 #source tb_axi_slv_int_ctrl.tcl
