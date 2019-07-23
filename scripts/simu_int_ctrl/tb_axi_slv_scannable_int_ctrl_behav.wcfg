@@ -14,15 +14,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="135846000fs"></ZoomStartTime>
-      <ZoomEndTime time="1832865233fs"></ZoomEndTime>
-      <Cursor1Time time="1333442000fs"></Cursor1Time>
+      <ZoomStartTime time="289272000fs"></ZoomStartTime>
+      <ZoomEndTime time="1777272001fs"></ZoomEndTime>
+      <Cursor1Time time="1220272000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="253"></NameColumnWidth>
-      <ValueColumnWidth column_width="96"></ValueColumnWidth>
+      <ValueColumnWidth column_width="88"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="35" />
+   <WVObjectSize size="37" />
    <wvobject type="logic" fp_name="/tb_axi_slv_int_ctrl/aclk">
       <obj_property name="ElementShortName">aclk</obj_property>
       <obj_property name="ObjectShortName">aclk</obj_property>
@@ -58,6 +58,7 @@
    <wvobject type="array" fp_name="/tb_axi_slv_int_ctrl/DUT/design_1_i/int_ctrl_0/inst/int_ctrl_v1_0_S00_AXI_inst/IntrCntrl_inst/intr_ack_bus">
       <obj_property name="ElementShortName">intr_ack_bus[7:0]</obj_property>
       <obj_property name="ObjectShortName">intr_ack_bus[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/tb_axi_slv_int_ctrl/DUT/design_1_i/int_ctrl_0/inst/int_ctrl_v1_0_S00_AXI_inst/IntrCntrl_inst/intr_in">
       <obj_property name="ElementShortName">intr_in</obj_property>
@@ -163,5 +164,13 @@
    <wvobject type="array" fp_name="/tb_axi_slv_int_ctrl/DUT/design_1_i/int_ctrl_0/inst/int_ctrl_v1_0_S00_AXI_inst/padding">
       <obj_property name="ElementShortName">padding[3:0]</obj_property>
       <obj_property name="ObjectShortName">padding[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_slv_int_ctrl/DUT/design_1_i/int_ctrl_0/inst/int_ctrl_v1_0_S00_AXI_inst/IntrCntrl_inst/snapshot1">
+      <obj_property name="ElementShortName">snapshot1[42:0]</obj_property>
+      <obj_property name="ObjectShortName">snapshot1[42:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_slv_int_ctrl/DUT/design_1_i/int_ctrl_0/inst/int_ctrl_v1_0_S00_AXI_inst/snapshot2">
+      <obj_property name="ElementShortName">snapshot2[22:0]</obj_property>
+      <obj_property name="ObjectShortName">snapshot2[22:0]</obj_property>
    </wvobject>
 </wave_config>

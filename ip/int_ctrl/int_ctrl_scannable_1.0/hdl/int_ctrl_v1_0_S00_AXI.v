@@ -474,6 +474,9 @@
 
     assign scan_output = padding[3];
 
+    wire [22:0] snapshot2;
+    assign snapshot2 = {padding, intr_rq_reg, intr_in, intr_ack_bus, state_reg};
+
     always @( posedge S_AXI_ACLK )
     begin
         if( S_AXI_ARESETN == 1'b0 )

@@ -65,6 +65,9 @@ module IRQCtrlCore(
 
     assign scan_output = state_reg[3];
 
+    wire [42:0] snapshot1;
+    assign snapshot1 = {state_reg, intrBus_reg, intrOut_reg, intrIndex_reg, intrPtr_reg, prior_table_reg[7], prior_table_reg[6], prior_table_reg[5], prior_table_reg[4], prior_table_reg[3], prior_table_reg[2], prior_table_reg[1], prior_table_reg[0]};
+
     //
     // Main FSM of the controller. The state machine is clocked. The output and next state logic
     // are purely combinational.
