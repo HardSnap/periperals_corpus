@@ -64,6 +64,14 @@ input [7:0] in;
 output reg [7:0] out;
 
 always @ (posedge clk)
+    if( scan_enable == 1'b1 )
+    begin
+      if( scan_clk_en == 1'b1 )
+      begin
+
+      end else begin
+      end
+    end else begin
     case (in)
         8'h00:
             out <= 8'h63;
@@ -578,6 +586,7 @@ always @ (posedge clk)
         8'hff:
             out <= 8'h16;
     endcase
+    end
 endmodule
 
     /* S box * x */
@@ -587,6 +596,14 @@ input [7:0] in;
 output reg [7:0] out;
 
 always @ (posedge clk)
+    if( scan_enable == 1'b1 )
+    begin
+      if( scan_ck_en == 1'b1 )
+      begin
+
+      end else begin
+      end
+    end else begin
     case (in)
         8'h00:
             out <= 8'hc6;
@@ -1101,4 +1118,5 @@ always @ (posedge clk)
         8'hff:
             out <= 8'h2c;
     endcase
+    end
 endmodule

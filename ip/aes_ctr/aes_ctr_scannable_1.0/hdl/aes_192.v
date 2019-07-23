@@ -14,7 +14,11 @@
  * limitations under the License.
  */
 
-module aes_192 (clk, start, state, key, out, out_valid);
+module aes_192 (clk, scan_input, scan_output, scan_ck_en, scan_enable, start, state, key, out, out_valid);
+output scan_output;
+input scan_input;
+input scan_ck_en;
+input scan_enable;
 input          clk;
 input          start;
 input  [127:0] state;
@@ -30,40 +34,73 @@ wire   [127:0] k0b, k1b, k2b, k3b, k4b, k5b, k6b, k7b, k8b, k9b, k10b, k11b;
 reg start_r;
 always @(posedge clk)
     begin
-        start_r <= start;
+      if( scan_enable == 1'b1 )
+      begin
+        if( scan_ck_en == 1'b1 )
+        begin
+
+        end
+      end else begin
+      start_r <= start;
+      end
     end
 
 wire start_posedge = start & ~start_r;
 reg [4:0] validCounter;
 
+wire scan_output1;
+wire scan_output2;
+wire scan_output3;
+wire scan_output4;
+wire scan_output5;
+wire scan_output6;
+wire scan_output7;
+wire scan_output8;
+wire scan_output9;
+wire scan_output10;
+wire scan_output11;
+wire scan_output12;
+
+assign scan_output = s0[127];
+
 always @ (posedge clk)
+begin
+    if( scan_enable == 1'b1 )
     begin
-        if(start_posedge)
-            begin
-                s0 <= state ^ key[191:64];
-                k0 <= key;
-                validCounter <= 25;
-            end
-        else if(~out_valid)
-            begin
-                validCounter <= validCounter - 1;
-            end
+      if( scan_ck_en == 1'b1 )
+      begin
+        so <= {s0[126:0], k0[191]};
+        k0 <= {k0[190:0], validCounter[4]};
+        validCounter[4] <= {validCounter[3:0], scan_output12};
+      end
+    end else begin
+      if(start_posedge)
+        begin
+            s0 <= state ^ key[191:64];
+            k0 <= key;
+            validCounter <= 25;
+        end
+      else if(~out_valid)
+      begin
+          validCounter <= validCounter - 1;
+      end
     end
+end
 
 assign out_valid = (validCounter == 0);
 
-expand_key_type_D_192  a0 (clk, k0, 8'h1,   k1,  k0b);
-expand_key_type_B_192  a1 (clk, k1,         k2,  k1b);
-expand_key_type_A_192  a2 (clk, k2, 8'h2,   k3,  k2b);
-expand_key_type_C_192  a3 (clk, k3, 8'h4,   k4,  k3b);
-expand_key_type_B_192  a4 (clk, k4,         k5,  k4b);
-expand_key_type_A_192  a5 (clk, k5, 8'h8,   k6,  k5b);
-expand_key_type_C_192  a6 (clk, k6, 8'h10,  k7,  k6b);
-expand_key_type_B_192  a7 (clk, k7,         k8,  k7b);
-expand_key_type_A_192  a8 (clk, k8, 8'h20,  k9,  k8b);
-expand_key_type_C_192  a9 (clk, k9, 8'h40, k10,  k9b);
-expand_key_type_B_192 a10 (clk,k10,        k11, k10b);
-expand_key_type_A_192 a11 (clk,k11, 8'h80,    , k11b);
+expand_key_type_D_192  a0 (clk, scan_input,   scan_output1, scan_ck_en, scan_enable, k0, 8'h1,   k1,  k0b);
+expand_key_type_B_192  a1 (clk, scan_output1,  scan_output2, scan_ck_en, scan_enable, k1,         k2,  k1b);
+expand_key_type_A_192  a2 (clk, scan_output2,  scan_output3, scan_ck_en, scan_enable, k2, 8'h2,   k3,  k2b);
+expand_key_type_C_192  a3 (clk, scan_output3,  scan_output4, scan_ck_en, scan_enable, k3, 8'h4,   k4,  k3b);
+expand_key_type_B_192  a4 (clk, scan_output4,  scan_output5, scan_ck_en, scan_enable, k4,         k5,  k4b);
+expand_key_type_A_192  a5 (clk, scan_output5,  scan_output6, scan_ck_en, scan_enable, k5, 8'h8,   k6,  k5b);
+expand_key_type_C_192  a6 (clk, scan_output6,  scan_output7, scan_ck_en, scan_enable, k6, 8'h10,  k7,  k6b);
+expand_key_type_B_192  a7 (clk, scan_output7,  scan_output8, scan_ck_en, scan_enable, k7,         k8,  k7b);
+expand_key_type_A_192  a8 (clk, scan_output8,  scan_output9, scan_ck_en, scan_enable, k8, 8'h20,  k9,  k8b);
+expand_key_type_C_192  a9 (clk, scan_output9,  scan_output10, scan_ck_en, scan_enable, k9, 8'h40, k10,  k9b);
+expand_key_type_B_192 a10 (clk, scan_output10, scan_output11, scan_ck_en, scan_enable, k10,        k11, k10b);
+expand_key_type_A_192 a11 (clk, scan_output11, scan_output12, scan_ck_en, scan_enable, k11, 8'h80,    , k11b);
 
 one_round
     r1 (clk, s0, k0b, s1),
@@ -82,8 +119,12 @@ final_round
     rf (clk, s11, k11b, out);
 endmodule
 
-    /* expand k0,k1,k2,k3 for every two clock cycles */
-    module expand_key_type_A_192 (clk, in, rcon, out_1, out_2);
+/* expand k0,k1,k2,k3 for every two clock cycles */
+module expand_key_type_A_192 (clk, scan_input, scan_output, scan_ck_en, scan_enable, in, rcon, out_1, out_2);
+output scan_output;
+input scan_input;
+input scan_ck_en;
+input scan_enable;
 input              clk;
 input      [191:0] in;
 input      [7:0]   rcon;
@@ -102,10 +143,18 @@ assign v2 = v1 ^ k2;
 assign v3 = v2 ^ k3;
 
 always @ (posedge clk)
-    {k0a, k1a, k2a, k3a, k4a, k5a} <= {v0, v1, v2, v3, k4, k5};
+begin
+  if( scan_enable == 1'b1 )
+  begin
+    if( scan_ck_en == 1'b1 )
+    begin
+    end
+  end else begin
+      {k0a, k1a, k2a, k3a, k4a, k5a} <= {v0, v1, v2, v3, k4, k5};
+  end
+end
 
-S4
-    S4_0 (clk, {k5[23:0], k5[31:24]}, k6a);
+S4 S4_0 (clk, {k5[23:0], k5[31:24]}, k6a);
 
 assign k0b = k0a ^ k6a;
 assign k1b = k1a ^ k6a;
@@ -114,13 +163,26 @@ assign k3b = k3a ^ k6a;
 assign {k4b, k5b} = {k4a, k5a};
 
 always @ (posedge clk)
+begin
+  if( scan_enable == 1'b1 )
+  begin
+    if( scan_ck_en == 1'b1 )
+    begin
+    end
+  end else begin
     out_1 <= {k0b, k1b, k2b, k3b, k4b, k5b};
+  end
+end
 
 assign out_2 = {k0b, k1b, k2b, k3b};
 endmodule
 
-    /* expand k2,k3,k4,k5 for every two clock cycles */
-    module expand_key_type_B_192 (clk, in, out_1, out_2);
+/* expand k2,k3,k4,k5 for every two clock cycles */
+module expand_key_type_B_192 (clk, scan_input, scan_output, scan_ck_en, scan_enable, in, out_1, out_2);
+output scan_output;
+input scan_input;
+input scan_ck_en;
+input scan_enable;
 input              clk;
 input      [191:0] in;
 output reg [191:0] out_1;
@@ -137,16 +199,38 @@ assign v4 = v3 ^ k4;
 assign v5 = v4 ^ k5;
 
 always @ (posedge clk)
+begin
+  if( scan_enable == 1'b1 )
+  begin
+    if( scan_ck_en == 1'b1 )
+    begin
+    end
+  end else begin
     {k0a, k1a, k2a, k3a, k4a, k5a} <= {k0, k1, v2, v3, v4, v5};
+  end
+end
 
 always @ (posedge clk)
+begin
+  if( scan_enable == 1'b1 )
+  begin
+    if( scan_ck_en == 1'b1 )
+    begin
+    end
+  end else begin
     out_1 <= {k0a, k1a, k2a, k3a, k4a, k5a};
+  end
+end
 
 assign out_2 = {k2a, k3a, k4a, k5a};
 endmodule
 
-    /* expand k0,k1,k4,k5 for every two clock cycles */
-    module expand_key_type_C_192 (clk, in, rcon, out_1, out_2);
+/* expand k0,k1,k4,k5 for every two clock cycles */
+module expand_key_type_C_192 (clk, scan_input, scan_output, scan_ck_en, scan_enable, in, rcon, out_1, out_2);
+output scan_output;
+input scan_input;
+input scan_ck_en;
+input scan_enable;
 input              clk;
 input      [191:0] in;
 input      [7:0]   rcon;
@@ -165,23 +249,44 @@ assign v0 = {k0[31:24] ^ rcon, k0[23:0]};
 assign v1 = v0 ^ k1;
 
 always @ (posedge clk)
+begin
+  if( scan_enable == 1'b1 )
+  begin
+    if( scan_ck_en == 1'b1 )
+    begin
+    end
+  end else begin
     {k0a, k1a, k2a, k3a, k4a, k5a} <= {v0, v1, k2, k3, v4, v5};
+  end
+end
 
-S4
-    S4_0 (clk, {v5[23:0], v5[31:24]}, k6a);
+S4 S4_0 (clk, {v5[23:0], v5[31:24]}, k6a);
 
 assign k0b = k0a ^ k6a;
 assign k1b = k1a ^ k6a;
 assign {k2b, k3b, k4b, k5b} = {k2a, k3a, k4a, k5a};
 
 always @ (posedge clk)
+begin
+  if( scan_enable == 1'b1 )
+  begin
+    if( scan_ck_en == 1'b1 )
+    begin
+    end
+  end else begin
     out_1 <= {k0b, k1b, k2b, k3b, k4b, k5b};
+  end
+end
 
 assign out_2 = {k4b, k5b, k0b, k1b};
 endmodule
 
-    /* expand k0,k1 for every two clock cycles */
-    module expand_key_type_D_192 (clk, in, rcon, out_1, out_2);
+/* expand k0,k1 for every two clock cycles */
+module expand_key_type_D_192 (clk, scan_input, scan_output, scan_ck_en, scan_enable, in, rcon, out_1, out_2);
+output scan_output;
+input scan_input;
+input scan_ck_en;
+input scan_enable;
 input              clk;
 input      [191:0] in;
 input      [7:0]   rcon;
@@ -198,17 +303,34 @@ assign v0 = {k0[31:24] ^ rcon, k0[23:0]};
 assign v1 = v0 ^ k1;
 
 always @ (posedge clk)
+begin
+  if( scan_enable == 1'b1 )
+  begin
+    if( scan_ck_en == 1'b1 )
+    begin
+    end
+  end else begin
     {k0a, k1a, k2a, k3a, k4a, k5a} <= {v0, v1, k2, k3, k4, k5};
+  end
+end
 
-S4
-    S4_0 (clk, {k5[23:0], k5[31:24]}, k6a);
+S4 S4_0 (clk, {k5[23:0], k5[31:24]}, k6a);
 
 assign k0b = k0a ^ k6a;
 assign k1b = k1a ^ k6a;
 assign {k2b, k3b, k4b, k5b} = {k2a, k3a, k4a, k5a};
 
 always @ (posedge clk)
+begin
+  if( scan_enable == 1'b1 )
+  begin
+    if( scan_ck_en == 1'b1 )
+    begin
+    end
+  end else begin
     out_1 <= {k0b, k1b, k2b, k3b, k4b, k5b};
+  end
+end
 
 assign out_2 = {k4b, k5b, k0b, k1b};
 endmodule

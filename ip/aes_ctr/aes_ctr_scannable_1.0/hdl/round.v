@@ -45,7 +45,14 @@ assign z2 = p02 ^ p13 ^ p20 ^ p31 ^ k2;
 assign z3 = p01 ^ p12 ^ p23 ^ p30 ^ k3;
 
 always @ (posedge clk)
+    if( scan_enable == 1'b1 )
+    begin
+      if( scan_ck_en == 1'b1 )
+      begin
+      end
+    end else begin
     state_out <= {z0, z1, z2, z3};
+    end
 endmodule
 
     /* AES final round for every two clock cycles */
@@ -78,6 +85,12 @@ assign z2 = {p20, p31, p02, p13} ^ k2;
 assign z3 = {p30, p01, p12, p23} ^ k3;
 
 always @ (posedge clk)
-    state_out <= {z0, z1, z2, z3};
+  if( scan_enable == 1'b1 )
+  begin
+    if( scan_ck_en == 1'b1 )
+    begin
+    end
+  end else begin
+  state_out <= {z0, z1, z2, z3};
+  end
 endmodule
-
