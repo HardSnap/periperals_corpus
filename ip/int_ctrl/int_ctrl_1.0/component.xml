@@ -816,21 +816,21 @@
       <xilinx:coreRevision>2</xilinx:coreRevision>
       <xilinx:coreCreationDateTime>2019-07-23T08:14:20Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c290095_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@11512190_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@60586f24_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7869ed76_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@44c23d12_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@618f0530_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7eb55655_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@52b1c9d0_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f21e54c_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@18617bd7_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@43927e5_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6580b314_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@379db3a6_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@32773796_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@e04a1f1_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c290095_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/int_ctrl/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11512190_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/int_ctrl/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60586f24_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/int_ctrl/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7869ed76_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/int_ctrl/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44c23d12_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/int_ctrl/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@618f0530_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/int_ctrl/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7eb55655_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/int_ctrl/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52b1c9d0_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/int_ctrl/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f21e54c_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/int_ctrl/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18617bd7_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/int_ctrl/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43927e5_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/int_ctrl/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6580b314_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/int_ctrl/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@379db3a6_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/int_ctrl/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32773796_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/int_ctrl/int_ctrl_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e04a1f1_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/int_ctrl/int_ctrl_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>

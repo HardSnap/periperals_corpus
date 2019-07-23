@@ -1,13 +1,9 @@
-#start_gui
 create_project -force int_ctrl_simu /home/nasm/Projects/fpga_ip/int_ctrl_simu -part xc7z020clg484-1
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
 create_bd_design "design_1"
+open_bd_design {/home/nasm/Projects/fpga_ip/int_ctrl_simu/int_ctrl_simu.srcs/sources_1/bd/design_1/design_1.bd}
 update_compile_order -fileset sources_1
-set_property  ip_repo_paths  /home/nasm/Projects/fpga_ip/int_ctrl_1.0 [current_project]
-update_ip_catalog
-set_property  ip_repo_paths  {} [current_project]
-update_ip_catalog
-set_property  ip_repo_paths  /home/nasm/Projects/fpga_ip/ip_repo/int_ctrl_1.0 [current_project]
+set_property  ip_repo_paths  /home/nasm/Projects/fpga_ip/ip/int_ctrl/int_ctrl_1.0 [current_project]
 update_ip_catalog
 startgroup
 create_bd_cell -type ip -vlnv user.org:user:int_ctrl:1.0 int_ctrl_0
@@ -40,11 +36,13 @@ generate_target Simulation [get_files /home/nasm/Projects/fpga_ip/int_ctrl_simu/
 export_ip_user_files -of_objects [get_files /home/nasm/Projects/fpga_ip/int_ctrl_simu/int_ctrl_simu.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
 export_simulation -of_objects [get_files /home/nasm/Projects/fpga_ip/int_ctrl_simu/int_ctrl_simu.srcs/sources_1/bd/design_1/design_1.bd] -directory /home/nasm/Projects/fpga_ip/int_ctrl_simu/int_ctrl_simu.ip_user_files/sim_scripts -ip_user_files_dir /home/nasm/Projects/fpga_ip/int_ctrl_simu/int_ctrl_simu.ip_user_files -ipstatic_source_dir /home/nasm/Projects/fpga_ip/int_ctrl_simu/int_ctrl_simu.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/nasm/Projects/fpga_ip/int_ctrl_simu/int_ctrl_simu.cache/compile_simlib/modelsim} {questa=/home/nasm/Projects/fpga_ip/int_ctrl_simu/int_ctrl_simu.cache/compile_simlib/questa} {ies=/home/nasm/Projects/fpga_ip/int_ctrl_simu/int_ctrl_simu.cache/compile_simlib/ies} {xcelium=/home/nasm/Projects/fpga_ip/int_ctrl_simu/int_ctrl_simu.cache/compile_simlib/xcelium} {vcs=/home/nasm/Projects/fpga_ip/int_ctrl_simu/int_ctrl_simu.cache/compile_simlib/vcs} {riviera=/home/nasm/Projects/fpga_ip/int_ctrl_simu/int_ctrl_simu.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
 set_property top design_1_wrapper [current_fileset]
-#set_property top tb_axi_slv_int_ctrl [current_fileset]
-#set_property top_file {C:/Data/sources/tb_axi_slv_int_ctrl.sv} [current_fileset]
+update_compile_order -fileset sources_1
+
+set_property top tb_axi_slv_int_ctrl [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
 
 launch_simulation
-source /home/nasm/Projects/fpga_ip/int_ctrl_simu/int_ctrl_simu.sim/sim_1/behav/xsim/xsim.dir/tb_axi_slv_int_ctrl_behav/webtalk/xsim_webtalk.tcl -notrace
 source tb_axi_slv_int_ctrl.tcl
  set curr_wave [current_wave_config]
  if { [string length $curr_wave] == 0 } {
@@ -57,4 +55,3 @@ source tb_axi_slv_int_ctrl.tcl
  }
 run 2400ns
 start_gui
-
