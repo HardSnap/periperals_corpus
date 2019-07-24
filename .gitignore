@@ -16,7 +16,7 @@
 #########
 #Do NOT ignore VHDL, Verilog, block diagrams or EDIF files.
 !*.vhd
-|*.sv
+!*.sv
 !*.v
 !*.bd
 !*.edif
@@ -67,10 +67,6 @@
 #TCL - files
 #########
 !*.tcl
-#########
-#Journal - files
-#########
-!*.jou
 #########
 #Reports
 #########
