@@ -72,7 +72,7 @@ assign scan_output = out[7];
 always @ (posedge clk)
     if( scan_enable == 1'b1 )
     begin
-      if( scan_clk_en == 1'b1 )
+      if( scan_ck_en == 1'b1 )
       begin
         out <= {out[6:0], scan_input};
       end else begin

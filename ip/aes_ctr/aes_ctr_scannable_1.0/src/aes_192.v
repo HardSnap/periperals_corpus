@@ -81,7 +81,7 @@ begin
     begin
       if( scan_ck_en == 1'b1 )
       begin
-        so <= {s0[126:0], k0[191]};
+        s0 <= {s0[126:0], k0[191]};
         k0 <= {k0[190:0], validCounter[4]};
         validCounter[4] <= {validCounter[3:0], scan_output23};
       end

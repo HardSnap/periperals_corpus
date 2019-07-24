@@ -13,8 +13,12 @@
  * sed: Serialized Encryption and Decryption
  */
 
-module aes_192_sed(clk, start, state, p_c_text, key, out, out_valid);
+module aes_192_sed(clk, scan_input, scan_output, scan_ck_en, scan_enable, start, state, p_c_text, key, out, out_valid);
     input          clk;
+    output scan_output;
+    input scan_input;
+    input scan_ck_en;
+    input scan_enable;
     input          start;
     input  [127:0] state, p_c_text;
     input  [191:0] key;
