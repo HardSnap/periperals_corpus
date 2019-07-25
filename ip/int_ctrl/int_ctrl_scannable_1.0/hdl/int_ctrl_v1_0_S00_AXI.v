@@ -19,6 +19,8 @@
         input  wire scan_input,
         input  wire scan_enable,
         input  wire scan_ck_en,
+
+        input wire [7:0] int_rq,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -396,7 +398,7 @@
 	        3'h0   : reg_data_out <=  {24'b0, intr_bus[7:0]};
 	        3'h1   : reg_data_out <= slv_reg1;
 	        3'h2   : reg_data_out <= slv_reg2;
-	        3'h3   : reg_data_out <= slv_reg3;
+	        3'h3   : reg_data_out <= {24'b0, int_rq[7:0]};
 	        3'h4   : reg_data_out <= slv_reg4;
 	        3'h5   : reg_data_out <= slv_reg5;
 	        default : reg_data_out <= 0;
@@ -515,7 +517,7 @@
             
             end
         end else begin
-            intr_rq_reg <= (intr_rq_reg | (slv_reg3[7:0] & (~mask_table)));
+            intr_rq_reg <= (intr_rq_reg | (int_rq & (~mask_table)));
             case(state_reg)
             IDLE:
             begin

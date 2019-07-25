@@ -31,6 +31,10 @@ module aes_192_sed(clk, scan_input, scan_output, scan_ck_en, scan_enable, start,
     // Instantiate the Unit Under Test (UUT)
 	aes_192 uut (
 		.clk(clk),
+		.scan_input(scan_input),
+		.scan_output(scan_output),
+		.scan_ck_en(scan_ck_en),
+		.scan_enable(scan_enable),
 		.start(start),
 		.state(state),
 		.key(key),

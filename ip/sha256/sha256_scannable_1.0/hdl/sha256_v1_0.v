@@ -19,6 +19,7 @@
         output wire scan_output,
         input  wire scan_enable,
         input  wire scan_ck_en,
+        output wire int,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -55,6 +56,7 @@
         .scan_output(scan_output),
         .scan_enable(scan_enable),
         .scan_ck_en(scan_ck_en),
+        .int(int),
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),

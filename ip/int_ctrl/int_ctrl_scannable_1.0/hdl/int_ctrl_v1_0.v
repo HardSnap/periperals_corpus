@@ -19,6 +19,14 @@
         input  wire scan_input,
         input  wire scan_enable,
         input  wire scan_ck_en,
+        input  wire int0,
+        input  wire int1,
+        input  wire int2,
+        input  wire int3,
+        input  wire int4,
+        input  wire int5,
+        input  wire int6,
+        input  wire int7,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -55,6 +63,7 @@
         .scan_input(scan_input),
         .scan_enable(scan_enable),
         .scan_ck_en(scan_ck_en),
+        .int_rq({int0,int1,0,0,0,0,0,0}),
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),

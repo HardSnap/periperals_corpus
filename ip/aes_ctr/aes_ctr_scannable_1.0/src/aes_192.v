@@ -73,7 +73,7 @@ wire scan_output20;
 wire scan_output21;
 wire scan_output22;
 wire scan_output23;
-
+wire scan_output24;
 
 always @ (posedge clk)
 begin
@@ -83,7 +83,7 @@ begin
       begin
         s0 <= {s0[126:0], k0[191]};
         k0 <= {k0[190:0], validCounter[4]};
-        validCounter[4] <= {validCounter[3:0], scan_output23};
+        validCounter[4] <= {validCounter[3:0], scan_output24};
       end
     end else begin
       if(start_posedge)
@@ -128,7 +128,7 @@ one_round
     r11 (clk, scan_output22, scan_output23, scan_ck_en, scan_enable, s10, k10b, s11);
 
 final_round
-    rf (clk, s11, k11b, out);
+    rf (clk, scan_output23, scan_output24, scan_ck_en, scan_enable, s11, k11b, out);
 endmodule
 
 /* expand k0,k1,k2,k3 for every two clock cycles */
@@ -154,19 +154,29 @@ assign v1 = v0 ^ k1;
 assign v2 = v1 ^ k2;
 assign v3 = v2 ^ k3;
 
+assign scan_output = k0a[31];
+
+wire scan_output2;
+
 always @ (posedge clk)
 begin
   if( scan_enable == 1'b1 )
   begin
     if( scan_ck_en == 1'b1 )
     begin
+      k0a <= {k0a[30:0], k1a[31]};
+      k1a <= {k1a[30:0], k2a[31]};
+      k2a <= {k2a[30:0], k3a[31]};
+      k3a <= {k3a[30:0], k4a[31]};
+      k4a <= {k4a[30:0], k5a[31]};
+      k5a <= {k5a[30:0], out_1[191]};
     end
   end else begin
       {k0a, k1a, k2a, k3a, k4a, k5a} <= {v0, v1, v2, v3, k4, k5};
   end
 end
 
-S4 S4_0 (clk, {k5[23:0], k5[31:24]}, k6a);
+S4 S4_0 (clk, scan_input, scan_output2, scan_ck_en, scan_enable, {k5[23:0], k5[31:24]}, k6a);
 
 assign k0b = k0a ^ k6a;
 assign k1b = k1a ^ k6a;
@@ -180,6 +190,7 @@ begin
   begin
     if( scan_ck_en == 1'b1 )
     begin
+      out_1 <= {out_1[190:0], scan_output2};
     end
   end else begin
     out_1 <= {k0b, k1b, k2b, k3b, k4b, k5b};
@@ -210,12 +221,20 @@ assign v3 = v2 ^ k3;
 assign v4 = v3 ^ k4;
 assign v5 = v4 ^ k5;
 
+assign scan_output = k0a[31];
+
 always @ (posedge clk)
 begin
   if( scan_enable == 1'b1 )
   begin
     if( scan_ck_en == 1'b1 )
     begin
+      k0a <= {k0a[30:0], k1a[31]};
+      k1a <= {k1a[30:0], k2a[31]};
+      k2a <= {k2a[30:0], k3a[31]};
+      k3a <= {k3a[30:0], k4a[31]};
+      k4a <= {k4a[30:0], k5a[31]};
+      k5a <= {k5a[30:0], out_1[191]};
     end
   end else begin
     {k0a, k1a, k2a, k3a, k4a, k5a} <= {k0, k1, v2, v3, v4, v5};
@@ -228,6 +247,7 @@ begin
   begin
     if( scan_ck_en == 1'b1 )
     begin
+      out_1 <= {out_1[190:0], scan_input};
     end
   end else begin
     out_1 <= {k0a, k1a, k2a, k3a, k4a, k5a};
@@ -260,19 +280,28 @@ assign v5 = v4 ^ k5;
 assign v0 = {k0[31:24] ^ rcon, k0[23:0]};
 assign v1 = v0 ^ k1;
 
+wire scan_output2;
+assign scan_output = k0a[31];
+
 always @ (posedge clk)
 begin
   if( scan_enable == 1'b1 )
   begin
     if( scan_ck_en == 1'b1 )
     begin
+      k0a <= {k0a[30:0], k1a[31]};
+      k1a <= {k1a[30:0], k2a[31]};
+      k2a <= {k2a[30:0], k3a[31]};
+      k3a <= {k3a[30:0], k4a[31]};
+      k4a <= {k4a[30:0], k5a[31]};
+      k5a <= {k5a[30:0], out_1[191]};
     end
   end else begin
     {k0a, k1a, k2a, k3a, k4a, k5a} <= {v0, v1, k2, k3, v4, v5};
   end
 end
 
-S4 S4_0 (clk, {v5[23:0], v5[31:24]}, k6a);
+S4 S4_0 (clk, scan_input, scan_output2, scan_ck_en, scan_enable, {v5[23:0], v5[31:24]}, k6a);
 
 assign k0b = k0a ^ k6a;
 assign k1b = k1a ^ k6a;
@@ -284,6 +313,7 @@ begin
   begin
     if( scan_ck_en == 1'b1 )
     begin
+      out_1 <= {out_1[190:0], scan_output2};
     end
   end else begin
     out_1 <= {k0b, k1b, k2b, k3b, k4b, k5b};
@@ -314,19 +344,28 @@ assign {k0, k1, k2, k3, k4, k5} = in;
 assign v0 = {k0[31:24] ^ rcon, k0[23:0]};
 assign v1 = v0 ^ k1;
 
+wire scan_output2;
+assign scan_output = k0a[31];
+
 always @ (posedge clk)
 begin
   if( scan_enable == 1'b1 )
   begin
     if( scan_ck_en == 1'b1 )
     begin
+      k0a <= {k0a[30:0], k1a[31]};
+      k1a <= {k1a[30:0], k2a[31]};
+      k2a <= {k2a[30:0], k3a[31]};
+      k3a <= {k3a[30:0], k4a[31]};
+      k4a <= {k4a[30:0], k5a[31]};
+      k5a <= {k5a[30:0], out_1[191]};
     end
   end else begin
     {k0a, k1a, k2a, k3a, k4a, k5a} <= {v0, v1, k2, k3, k4, k5};
   end
 end
 
-S4 S4_0 (clk, {k5[23:0], k5[31:24]}, k6a);
+S4 S4_0 (clk, scan_input, scan_output2, scan_ck_en, scan_enable, {k5[23:0], k5[31:24]}, k6a);
 
 assign k0b = k0a ^ k6a;
 assign k1b = k1a ^ k6a;
@@ -338,6 +377,7 @@ begin
   begin
     if( scan_ck_en == 1'b1 )
     begin
+      out_1 <= {out_1[190:0], scan_output2};
     end
   end else begin
     out_1 <= {k0b, k1b, k2b, k3b, k4b, k5b};
