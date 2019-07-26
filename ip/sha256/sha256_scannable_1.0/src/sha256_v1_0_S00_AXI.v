@@ -19,7 +19,7 @@
         output wire scan_output,
         input  wire scan_enable,
         input  wire scan_ck_en,
-        output wire int,
+        output wire interrupt,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -844,7 +844,7 @@
 	end
 	
 	// Add user logic here
-    assign int = int_reg;
+    assign interrupt = int_reg;
     reg int_reg;
     reg ct_valid_down;
     

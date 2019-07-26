@@ -1,4 +1,4 @@
-create_project aes_ctr_scannable_simu /home/nasm/Projects/fpga_ip/aes_ctr_scannable_simu -part xc7z020clg484-1
+create_project -force aes_ctr_scannable_simu /home/nasm/Projects/fpga_ip/aes_ctr_scannable_simu -part xc7z020clg484-1
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
 set_property  ip_repo_paths  /home/nasm/Projects/fpga_scan_ip/ip_repo/fast_ip_scanner_1.0 [current_project]
 set_property  ip_repo_paths  {/home/nasm/Projects/fpga_scan_ip/ip_repo/fast_ip_scanner_1.0 /home/nasm/Projects/fpga_ip/ip/aes_ctr/aes_ctr_scannable_1.0} [current_project]

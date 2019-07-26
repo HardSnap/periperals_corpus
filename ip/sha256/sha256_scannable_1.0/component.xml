@@ -229,6 +229,28 @@
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>interrupt</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="interrupt" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="interrupt_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>INTERRUPT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>interrupt</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>SENSITIVITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.INTERRUPT.SENSITIVITY" spirit:choiceRef="choice_list_9ca20931">LEVEL_HIGH</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
   </spirit:busInterfaces>
   <spirit:memoryMaps>
     <spirit:memoryMap>
@@ -266,7 +288,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>f6fbbcaf</spirit:value>
+            <spirit:value>32f9e049</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -282,7 +304,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>f6fbbcaf</spirit:value>
+            <spirit:value>32f9e049</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -383,7 +405,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>int</spirit:name>
+        <spirit:name>interrupt</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
@@ -726,6 +748,13 @@
       <spirit:enumeration>32</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
+      <spirit:name>choice_list_9ca20931</spirit:name>
+      <spirit:enumeration>LEVEL_HIGH</spirit:enumeration>
+      <spirit:enumeration>LEVEL_LOW</spirit:enumeration>
+      <spirit:enumeration>EDGE_RISING</spirit:enumeration>
+      <spirit:enumeration>EDGE_FALLING</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
       <spirit:name>choice_list_9d8b0d81</spirit:name>
       <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
       <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
@@ -758,7 +787,7 @@
       <spirit:file>
         <spirit:name>hdl/sha256_v1_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_e4240468</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_623b3f9d</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -899,8 +928,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>sha256_scannable_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>15</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-07-25T09:56:45Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>16</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2019-07-26T09:58:45Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@3d1bcd70_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/sha256_scannable_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@214da0ba_ARCHIVE_LOCATION">/home/nasm/Projects/hw-snapshotting/fpga/ip_repo/sha256_scannable_1.0</xilinx:tag>
@@ -1214,14 +1243,49 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@6ab1e72d_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@49cc4844_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@44bea966_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1048c985_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@189c889f_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f01d9dc_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@693dbfb9_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a432027_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15bee090_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f93e637_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19a47ec8_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@327d3c80_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79a2c162_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18686d7d_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c540e05_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ac1903a_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6911a39a_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a5748a6_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b18276b_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66d1a27f_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1699644_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75736e9d_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f580191_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4121be2_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d019916_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43d73f12_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42626a1d_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39d55b4a_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@154ca801_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c99c09c_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44d430c3_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59e79452_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@156f9145_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@710c36c8_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73ba647c_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@588da95a_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1725f88e_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a69c190_ARCHIVE_LOCATION">/home/nasm/Projects/fpga_ip/ip/sha256/sha256_scannable_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="741e5642"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="07a9f511"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="45ea2587"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="0879f0d0"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="37e0d9c6"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="ef30a686"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="fba08ac4"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="f37dd472"/>
     </xilinx:packagingInfo>
