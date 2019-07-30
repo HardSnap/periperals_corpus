@@ -159,13 +159,13 @@ initial begin
     master_agent_aes_ctr.AXI4LITE_WRITE_BURST(AES_PT_BASE+32'D12, prot, 32'h00001111, resp);
     // Set st
     #10ns
-    master_agent_aes_ctr.AXI4LITE_WRITE_BURST(AES_ST_BASE, prot, 32'h3243f6a8, resp);
+    master_agent_aes_ctr.AXI4LITE_WRITE_BURST(AES_ST_BASE, prot, 32'he0370734, resp);
     #10ns
-    master_agent_aes_ctr.AXI4LITE_WRITE_BURST(AES_ST_BASE+32'D4, prot, 32'h885a308d, resp);
+    master_agent_aes_ctr.AXI4LITE_WRITE_BURST(AES_ST_BASE+32'D4, prot, 32'h313198a2, resp);
     #10ns
-    master_agent_aes_ctr.AXI4LITE_WRITE_BURST(AES_ST_BASE+32'D8, prot, 32'h313198a2, resp);
+    master_agent_aes_ctr.AXI4LITE_WRITE_BURST(AES_ST_BASE+32'D8, prot, 32'h885a308d, resp);
     #10ns
-    master_agent_aes_ctr.AXI4LITE_WRITE_BURST(AES_ST_BASE+32'D12, prot, 32'he0370734, resp);
+    master_agent_aes_ctr.AXI4LITE_WRITE_BURST(AES_ST_BASE+32'D12, prot, 32'h3243f6a8, resp);
     
     // SET CONTROL -> NEXT
     master_agent_aes_ctr.AXI4LITE_WRITE_BURST(AES_START, prot, 32'h00000000, resp);

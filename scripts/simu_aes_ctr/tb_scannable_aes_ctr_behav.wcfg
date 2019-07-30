@@ -14,13 +14,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="818000000fs"></ZoomStartTime>
-      <ZoomEndTime time="1182500001fs"></ZoomEndTime>
-      <Cursor1Time time="919000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="2365000001fs"></ZoomEndTime>
+      <Cursor1Time time="1220000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="253"></NameColumnWidth>
-      <ValueColumnWidth column_width="277"></ValueColumnWidth>
+      <ValueColumnWidth column_width="273"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="18" />
    <wvobject type="logic" fp_name="/tb_scannable_aes_ctr/aclk">
