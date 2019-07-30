@@ -83,7 +83,7 @@ begin
       begin
         s0 <= {s0[126:0], k0[191]};
         k0 <= {k0[190:0], validCounter[4]};
-        validCounter[4] <= {validCounter[3:0], scan_output24};
+        validCounter <= {validCounter[3:0], scan_output24};
       end
     end else begin
       if(start_posedge)

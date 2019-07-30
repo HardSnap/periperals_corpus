@@ -37,11 +37,16 @@ assign {k0, k1, k2, k3} = key;
 
 assign {s0, s1, s2, s3} = state_in;
 
+wire scan_output2;
+wire scan_output3;
+wire scan_output4;
+wire scan_output5;
+
 table_lookup
-    t0 (clk, s0, p00, p01, p02, p03),
-    t1 (clk, s1, p10, p11, p12, p13),
-    t2 (clk, s2, p20, p21, p22, p23),
-    t3 (clk, s3, p30, p31, p32, p33);
+    t0 (clk, scan_input, scan_output2, scan_ck_en, scan_enable, s0, p00, p01, p02, p03),
+    t1 (clk, scan_output2, scan_output3, scan_ck_en, scan_enable, s1, p10, p11, p12, p13),
+    t2 (clk, scan_output3, scan_output4, scan_ck_en, scan_enable, s2, p20, p21, p22, p23),
+    t3 (clk, scan_output4, scan_output5, scan_ck_en, scan_enable, s3, p30, p31, p32, p33);
 
 assign z0 = p00 ^ p11 ^ p22 ^ p33 ^ k0;
 assign z1 = p03 ^ p10 ^ p21 ^ p32 ^ k1;
@@ -55,7 +60,7 @@ always @ (posedge clk)
     begin
       if( scan_ck_en == 1'b1 )
       begin
-        state_out <= {state_out[126:0], scan_input};
+        state_out <= {state_out[126:0], scan_output5};
       end
     end else begin
     state_out <= {z0, z1, z2, z3};
@@ -84,11 +89,16 @@ assign {k0, k1, k2, k3} = key_in;
 
 assign {s0, s1, s2, s3} = state_in;
 
+wire scan_output2;
+wire scan_output3;
+wire scan_output4;
+wire scan_output5;
+
 S4
-    S4_1 (clk, s0, {p00, p01, p02, p03}),
-    S4_2 (clk, s1, {p10, p11, p12, p13}),
-    S4_3 (clk, s2, {p20, p21, p22, p23}),
-    S4_4 (clk, s3, {p30, p31, p32, p33});
+    S4_1 (clk, scan_input, scan_output2, scan_ck_en, scan_enable, s0, {p00, p01, p02, p03}),
+    S4_2 (clk, scan_output2, scan_output3, scan_ck_en, scan_enable, s1, {p10, p11, p12, p13}),
+    S4_3 (clk, scan_output3, scan_output4, scan_ck_en, scan_enable, s2, {p20, p21, p22, p23}),
+    S4_4 (clk, scan_output4, scan_output5, scan_ck_en, scan_enable, s3, {p30, p31, p32, p33});
 
 assign z0 = {p00, p11, p22, p33} ^ k0;
 assign z1 = {p10, p21, p32, p03} ^ k1;
@@ -102,7 +112,7 @@ always @ (posedge clk)
   begin
     if( scan_ck_en == 1'b1 )
     begin
-        state_out <= {state_out[126:0], scan_input};
+        state_out <= {state_out[126:0], scan_output5};
     end
   end else begin
   state_out <= {z0, z1, z2, z3};

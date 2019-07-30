@@ -16,44 +16,66 @@
 
 /* verilator lint_off UNOPTFLAT */
 
-module table_lookup (clk, state, p0, p1, p2, p3);
+module table_lookup (clk, scan_input, scan_output, scan_ck_en, scan_enable, state, p0, p1, p2, p3);
 input clk;
+input  scan_input;
+output scan_output;
+input  scan_ck_en;
+input  scan_enable;
 input [31:0] state;
 output [31:0] p0, p1, p2, p3;
 wire [7:0] b0, b1, b2, b3;
 
+wire scan_output2;
+wire scan_output3;
+wire scan_output4;
+
 assign {b0, b1, b2, b3} = state;
 T
-    t0 (clk, b0, {p0[23:0], p0[31:24]}),
-    t1 (clk, b1, {p1[15:0], p1[31:16]}),
-    t2 (clk, b2, {p2[7:0],  p2[31:8]} ),
-    t3 (clk, b3, p3);
+    t0 (clk, scan_input, scan_output2, scan_ck_en, scan_enable, b0, {p0[23:0], p0[31:24]}),
+    t1 (clk, scan_output2, scan_output3, scan_ck_en, scan_enable, b1, {p1[15:0], p1[31:16]}),
+    t2 (clk, scan_output3, scan_output4, scan_ck_en, scan_enable, b2, {p2[7:0],  p2[31:8]} ),
+    t3 (clk, scan_output4, scan_output, scan_ck_en, scan_enable, b3, p3);
 endmodule
 
     /* substitue four bytes in a word */
-    module S4 (clk, in, out);
+    module S4 (clk, scan_input, scan_output, scan_ck_en, scan_enable, in, out);
 input clk;
+input scan_input;
+output scan_output;
+input scan_ck_en;
+input scan_enable;
 input [31:0] in;
 output [31:0] out;
 
+wire scan_output2;
+wire scan_output3;
+wire scan_output4;
+
 S
-    S_0 (clk, in[31:24], out[31:24]),
-    S_1 (clk, in[23:16], out[23:16]),
-    S_2 (clk, in[15:8],  out[15:8] ),
-    S_3 (clk, in[7:0],   out[7:0]  );
+    S_0 (clk, scan_input, scan_output2, scan_ck_en, scan_enable, in[31:24], out[31:24]),
+    S_1 (clk, scan_output2, scan_output3, scan_ck_en, scan_enable, in[23:16], out[23:16]),
+    S_2 (clk, scan_output3, scan_output4, scan_ck_en, scan_enable, in[15:8],  out[15:8] ),
+    S_3 (clk, scan_output4, scan_output, scan_ck_en, scan_enable, in[7:0],   out[7:0]  );
 endmodule
 
     /* S_box, S_box, S_box*(x+1), S_box*x */
-    module T (clk, in, out);
+    module T (clk, scan_input, scan_output, scan_ck_en, scan_enable, in, out);
 input         clk;
+input  scan_input;
+output scan_output;
+input  scan_ck_en;
+input  scan_enable;
 input  [7:0]  in;
 output [31:0] out;
 
+wire scan_output2;
+
 S
-    s0 (clk, in, out[31:24]);
+    s0 (clk, scan_input, scan_output2, scan_ck_en, scan_enable, in, out[31:24]);
 assign out[23:16] = out[31:24];
 xS
-    s4 (clk, in, out[7:0]);
+    s4 (clk, scan_output2, scan_output, scan_ck_en, scan_enable, in, out[7:0]);
 assign out[15:8] = out[23:16] ^ out[7:0];
 endmodule
 
@@ -72,7 +94,7 @@ assign scan_output = out[7];
 always @ (posedge clk)
     if( scan_enable == 1'b1 )
     begin
-      if( scan_clk_en == 1'b1 )
+      if( scan_ck_en == 1'b1 )
       begin
         out <= {out[6:0], scan_input};
       end else begin
