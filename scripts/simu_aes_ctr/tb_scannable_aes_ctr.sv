@@ -102,6 +102,14 @@ initial begin
     #175ns
     aresetn = 1;
 
+    // Init scan 
+    #10ns
+    master_agent_scan_ip.AXI4LITE_WRITE_BURST(32'H44A0_0000, prot, 32'H0000_0000, resp);
+    #10ns
+    master_agent_scan_ip.AXI4LITE_WRITE_BURST(32'H44A0_0004, prot, 32'H0000_4000, resp);
+    #10ns
+    master_agent_scan_ip.AXI4LITE_WRITE_BURST(32'H44A0_0008, prot, 32'H25C6, resp);
+
     // SET KEY 0
     #10ns
     master_agent_aes_ctr.AXI4LITE_WRITE_BURST(AES_KEY0_BASE, prot, 32'h28aed2a6, resp);
@@ -173,7 +181,23 @@ initial begin
     master_agent_aes_ctr.AXI4LITE_WRITE_BURST(AES_START, prot, 32'h00000001, resp);
     #10ns
     master_agent_aes_ctr.AXI4LITE_WRITE_BURST(AES_START, prot, 32'h00000000, resp);
+    #100ns
+
     #10ns
+    master_agent_scan_ip.AXI4LITE_WRITE_BURST(32'H44A0_000C, prot, 32'D1, resp);
+    #10ns
+    master_agent_scan_ip.AXI4LITE_WRITE_BURST(32'H44A0_000C, prot, 32'D0, resp);
+
+    wait(DUT.design_1_i.fast_ip_scanner_0.inst.scan_core_fifo_inst.scan_done);
+
+    #10ns
+    master_agent_scan_ip.AXI4LITE_WRITE_BURST(32'H44A0_0000, prot, 32'H0000_0000, resp);
+    #10ns
+    master_agent_scan_ip.AXI4LITE_WRITE_BURST(32'H44A0_0004, prot, 32'H0000_4000, resp);
+    #10ns
+    master_agent_scan_ip.AXI4LITE_WRITE_BURST(32'H44A0_000C, prot, 32'D1, resp);
+    #10ns
+    master_agent_scan_ip.AXI4LITE_WRITE_BURST(32'H44A0_000C, prot, 32'D0, resp);
 
     #100
 
