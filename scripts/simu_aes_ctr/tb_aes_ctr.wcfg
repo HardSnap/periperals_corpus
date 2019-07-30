@@ -14,15 +14,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1400000001fs"></ZoomEndTime>
-      <Cursor1Time time="786813000fs"></Cursor1Time>
+      <ZoomStartTime time="707446808fs"></ZoomStartTime>
+      <ZoomEndTime time="1058510639fs"></ZoomEndTime>
+      <Cursor1Time time="983283000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="253"></NameColumnWidth>
-      <ValueColumnWidth column_width="92"></ValueColumnWidth>
+      <ValueColumnWidth column_width="88"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="11" />
+   <WVObjectSize size="18" />
    <wvobject type="logic" fp_name="/tb_axi_slv_int_ctrl/aclk">
       <obj_property name="ElementShortName">aclk</obj_property>
       <obj_property name="ObjectShortName">aclk</obj_property>
@@ -66,5 +66,33 @@
    <wvobject type="logic" fp_name="/tb_axi_slv_int_ctrl/DUT/design_1_i/aes_0/inst/AES_CTR_v1_0_S00_AXI_inst/aes/out_valid">
       <obj_property name="ElementShortName">out_valid</obj_property>
       <obj_property name="ObjectShortName">out_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_slv_int_ctrl/DUT/design_1_i/aes_0/inst/AES_CTR_v1_0_S00_AXI_inst/key_big0">
+      <obj_property name="ElementShortName">key_big0[191:0]</obj_property>
+      <obj_property name="ObjectShortName">key_big0[191:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_slv_int_ctrl/DUT/design_1_i/aes_0/inst/AES_CTR_v1_0_S00_AXI_inst/key_big1">
+      <obj_property name="ElementShortName">key_big1[191:0]</obj_property>
+      <obj_property name="ObjectShortName">key_big1[191:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_slv_int_ctrl/DUT/design_1_i/aes_0/inst/AES_CTR_v1_0_S00_AXI_inst/key_big2">
+      <obj_property name="ElementShortName">key_big2[191:0]</obj_property>
+      <obj_property name="ObjectShortName">key_big2[191:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_slv_int_ctrl/DUT/design_1_i/aes_0/inst/AES_CTR_v1_0_S00_AXI_inst/aes/p_c_text">
+      <obj_property name="ElementShortName">p_c_text[127:0]</obj_property>
+      <obj_property name="ObjectShortName">p_c_text[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_slv_int_ctrl/DUT/design_1_i/aes_0/inst/AES_CTR_v1_0_S00_AXI_inst/ct">
+      <obj_property name="ElementShortName">ct[127:0]</obj_property>
+      <obj_property name="ObjectShortName">ct[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_slv_int_ctrl/DUT/design_1_i/aes_0/inst/AES_CTR_v1_0_S00_AXI_inst/p_c_big">
+      <obj_property name="ElementShortName">p_c_big[127:0]</obj_property>
+      <obj_property name="ObjectShortName">p_c_big[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_slv_int_ctrl/DUT/design_1_i/aes_0/inst/AES_CTR_v1_0_S00_AXI_inst/state_big">
+      <obj_property name="ElementShortName">state_big[127:0]</obj_property>
+      <obj_property name="ObjectShortName">state_big[127:0]</obj_property>
    </wvobject>
 </wave_config>
