@@ -191,9 +191,9 @@ initial begin
     wait(DUT.design_1_i.fast_ip_scanner_0.inst.scan_core_fifo_inst.scan_done);
 
     #10ns
-    master_agent_scan_ip.AXI4LITE_WRITE_BURST(32'H44A0_0000, prot, 32'H0000_0000, resp);
+    master_agent_scan_ip.AXI4LITE_WRITE_BURST(32'H44A0_0000, prot, 32'H0000_4000, resp);
     #10ns
-    master_agent_scan_ip.AXI4LITE_WRITE_BURST(32'H44A0_0004, prot, 32'H0000_4000, resp);
+    master_agent_scan_ip.AXI4LITE_WRITE_BURST(32'H44A0_0004, prot, 32'H0000_0000, resp);
     #10ns
     master_agent_scan_ip.AXI4LITE_WRITE_BURST(32'H44A0_000C, prot, 32'D1, resp);
     #10ns
