@@ -357,9 +357,9 @@
 	                // Respective byte enables are asserted as per write strobes 
 	                // Slave register 1
                   if ( S_AXI_WSTRB[0] == 1) begin
-                    init_reg = S_AXI_WDATA[CTRL_INIT_BIT];
-                    next_reg = S_AXI_WDATA[CTRL_NEXT_BIT];
-                    mode_reg = S_AXI_WDATA[CTRL_MODE_BIT];
+                    init_reg <= S_AXI_WDATA[CTRL_INIT_BIT];
+                    next_reg <= S_AXI_WDATA[CTRL_NEXT_BIT];
+                    mode_reg <= S_AXI_WDATA[CTRL_MODE_BIT];
                   end
 //	                slv_reg1[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
 //	              end  
