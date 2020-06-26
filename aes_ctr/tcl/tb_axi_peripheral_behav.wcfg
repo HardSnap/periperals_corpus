@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_axi_peripheral_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="axi_vip_pkg" />
+            <top_module name="glbl" />
+            <top_module name="std" />
+            <top_module name="tb_axi_peripheral" />
+            <top_module name="xil_common_vip_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="686000000fs"></ZoomStartTime>
+      <ZoomEndTime time="826400001fs"></ZoomEndTime>
+      <Cursor1Time time="757000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="334"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wvobject type="logic" fp_name="/tb_axi_peripheral/aclk">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_axi_peripheral/aresetn">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_axi_peripheral/interrupt">
+      <obj_property name="ElementShortName">interrupt</obj_property>
+      <obj_property name="ObjectShortName">interrupt</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_peripheral/prot">
+      <obj_property name="ElementShortName">prot[2:0]</obj_property>
+      <obj_property name="ObjectShortName">prot[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_peripheral/resp">
+      <obj_property name="ElementShortName">resp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">resp[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_peripheral/DUT/top_i/t0/inst/AES_CTR_v1_0_S00_AXI_inst/p_c_big">
+      <obj_property name="ElementShortName">p_c_big[127:0]</obj_property>
+      <obj_property name="ObjectShortName">p_c_big[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_peripheral/DUT/top_i/t0/inst/AES_CTR_v1_0_S00_AXI_inst/state_big">
+      <obj_property name="ElementShortName">state_big[127:0]</obj_property>
+      <obj_property name="ObjectShortName">state_big[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_peripheral/DUT/top_i/t0/inst/AES_CTR_v1_0_S00_AXI_inst/key_big">
+      <obj_property name="ElementShortName">key_big[191:0]</obj_property>
+      <obj_property name="ObjectShortName">key_big[191:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_peripheral/DUT/top_i/t0/inst/AES_CTR_v1_0_S00_AXI_inst/key_big0">
+      <obj_property name="ElementShortName">key_big0[191:0]</obj_property>
+      <obj_property name="ObjectShortName">key_big0[191:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_peripheral/DUT/top_i/t0/inst/AES_CTR_v1_0_S00_AXI_inst/key_big1">
+      <obj_property name="ElementShortName">key_big1[191:0]</obj_property>
+      <obj_property name="ObjectShortName">key_big1[191:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_peripheral/DUT/top_i/t0/inst/AES_CTR_v1_0_S00_AXI_inst/key_big2">
+      <obj_property name="ElementShortName">key_big2[191:0]</obj_property>
+      <obj_property name="ObjectShortName">key_big2[191:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_peripheral/DUT/top_i/t0/inst/AES_CTR_v1_0_S00_AXI_inst/ct">
+      <obj_property name="ElementShortName">ct[127:0]</obj_property>
+      <obj_property name="ObjectShortName">ct[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_axi_peripheral/DUT/top_i/t0/inst/AES_CTR_v1_0_S00_AXI_inst/ct_valid">
+      <obj_property name="ElementShortName">ct_valid</obj_property>
+      <obj_property name="ObjectShortName">ct_valid</obj_property>
+   </wvobject>
+</wave_config>
